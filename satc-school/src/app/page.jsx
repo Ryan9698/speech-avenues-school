@@ -1,11 +1,15 @@
-import Image from "next/image";
+import Image from 'next/image';
+import { Mission } from '@/components';
 
 export default function Home() {
   return (
-    <div className="">
-      <h1 className="text-5xl font-bold mt-6 text-center">
-        Back on another one! 😊
-      </h1>
+    <div className="space-y-6">
+      <div className="relative bg-green-600 w-full h-96">
+        <p className="absolute top-3/4 left-1/3 transform -translate-x-1/2 -translate-y-1/2 text-3xl font-bold text-white font-geist">
+          Speech Avenues Therapy Co Communication Cultivation Academy
+        </p>
+      </div>
+      <Mission />
     </div>
   );
 }
