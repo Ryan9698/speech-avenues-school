@@ -1,15 +1,25 @@
+import Link from 'next/link';
+
 export default function Mission() {
   return (
     <section className="max-w-4xl mx-auto px-4 py-12 text-gray-800">
-      <h2 className="text-3xl font-bold text-green-700 text-center mb-6">
+      <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-green-950 text-center mb-6">
         Our Mission & Approach
       </h2>
       <div className="space-y-5 leading-relaxed">
         <p>
-          At Speech Avenues Therapy Co Communication Cultivation Academy
-          (SATC-CCA), we are dedicated to creating a nurturing and inclusive
-          therapeutic learning environment for nonverbal and minimally verbal
-          children with autism and other developmental delays.
+          At{' '}
+          <Link
+            href="https://speechavenues.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span className=" text-indigo-500">Speech Avenues Therapy Co</span>
+          </Link>{' '}
+          Communication Cultivation Academy (SATC-CCA), we are dedicated to
+          creating a nurturing and inclusive therapeutic learning environment
+          for nonverbal and minimally verbal children with autism and other
+          developmental delays.
         </p>
 
         <p>
@@ -28,9 +38,10 @@ export default function Mission() {
         </p>
 
         <p>
-          Positive Behavioral Support (PBS) is the system we use at SATC-CCA.
-          PBS is a research-based approach that uses environmental systems to
-          prevent or intervene in problem behaviors before they occur.
+          <strong>Positive Behavioral Support (PBS) </strong> is the system we
+          use at SATC-CCA. PBS is a research-based approach that uses
+          environmental systems to prevent or intervene in problem behaviors
+          before they occur.
         </p>
 
         <p>
@@ -38,25 +49,27 @@ export default function Mission() {
           respect, kindness, support, and the opportunity to thrive in a safe,
           welcoming community.
         </p>
-
-        <div>
-          <h3 className="text-xl font-semibold mt-6 mb-2 text-green-800">
-            PBS has three core principles:
-          </h3>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>
-              Focuses on instructional strategies rather than negative
-              consequences (unlike ABA).
-            </li>
-            <li>Supports observable and measurable behavior.</li>
-            <li>
-              Ensures interventions are respectful of the individual’s life and
-              circumstances.
-            </li>
-          </ul>
+        <div className="flex flex-col md:flex-row bg-pink-300 rounded-lg p-4">
+          <div className="flex flex-col items-center flex-1">
+            <h3 className="text-xl font-semibold mt-6 mb-4 ">
+              PBS has three core principles:
+            </h3>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>
+                Focuses on instructional strategies rather than negative
+                consequences (unlike ABA).
+              </li>
+              <li>Supports observable and measurable behavior.</li>
+              <li>
+                Ensures interventions are respectful of the individual’s life
+                and circumstances.
+              </li>
+            </ul>
+          </div>
+          {/* Image Container #1 */}
+          <div className=" bg-green-400 rounded-lg h-64 w-64 m-4" />
         </div>
-
-        <h3 className="text-2xl font-bold mt-10 text-green-700">
+        <h3 className="text-4xl font-bold mt-10 text-green-700 text-center">
           Why We Stand Out:
         </h3>
         <p>

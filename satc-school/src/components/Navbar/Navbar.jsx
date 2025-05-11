@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navLinks = [
   {
@@ -20,16 +21,23 @@ const navLinks = [
 ];
 export default function Navbar() {
   return (
-    <div className="bg-gradient-to-bl from-green-400 to-green-600 p-2 w-full">
-      <div className="text-xl font-bold text-white font-geist">
-        <ul className="flex items-center justify-around">
+    // Used grid layout for more control over responsiveness
+    <div className="p-2 w-full grid grid-cols-6 h-20">
+      <div className="col-span-2 h-full">
+        <Image
+          src="/images/navlogo2.webp"
+          alt="satclogo"
+          width={100}
+          height={75}
+        />
+      </div>
+      <div className="text-2xl font-bold text-gray-950 font-geist col-span-4">
+        <ul className="flex gap-20 justify-start items-center h-full">
           {navLinks.map(({ name, href }, index) => {
             return (
-              <div key={index}>
-                <Link href={href}>
-                  <li>{name}</li>
-                </Link>
-              </div>
+              <li key={index}>
+                <Link href={href}>{name}</Link>
+              </li>
             );
           })}
         </ul>
