@@ -7,6 +7,7 @@ import {
 } from '@/utils/fontImports';
 import './globals.css';
 import Navbar from '@/components/Navbar/Navbar';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata = {
   title: 'Speech Avenues Therapy School',
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
       </body>
+      <Footer />
     </html>
   );
 }
