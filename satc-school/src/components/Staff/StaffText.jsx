@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function StaffText() {
   return (
     <section className="max-w-4xl mx-auto px-4 py-12 text-gray-800">
@@ -25,10 +27,74 @@ export default function StaffText() {
           We believe that every child deserves a space where they feel safe,
           supported, and celebrated. That’s why we are committed to maintaining
           an all-inclusive, loving, respectful, kind, caring, and bully-free
-          zone. We do not discriminate, and we do not tolerate exclusion,
-          bullying, or anything that threatens the emotional or physical
-          well-being of our students.
+          zone.{' '}
         </p>
+        <p>
+          <strong>
+            We do not discriminate, and we do not tolerate exclusion, bullying,
+            or anything that threatens the emotional or physical well-being of
+            our students.
+          </strong>
+        </p>
+      </div>
+      <div className="grid md:grid-cols-3 gap-3 mt-10">
+        <div className="space-y-4">
+          <Image
+            src="/images/chalkavatar.webp"
+            alt="staff"
+            width={300}
+            height={400}
+            className="rounded-full mx-auto"
+          />
+          <p className="text-center bg-green-300">
+            <strong>Dr. Chalk</strong>
+          </p>
+          <p className="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            officiis atque deleniti quae laborum amet odio rem voluptates
+            nostrum vitae odit, laudantium debitis nulla soluta labore maiores
+            cupiditate accusamus ipsa?
+          </p>
+        </div>
+        <div className="space-y-4 border border-gray-200 rounded-xl">
+          <Image
+            src="/images/chalkavatar.webp"
+            alt="staff"
+            width={300}
+            height={400}
+            className="rounded-full p-2 mx-auto"
+          />
+          <p className="text-center bg-sky-400 font-bold">Dr. Something</p>
+          <p className="text-sm p-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+            blanditiis, eveniet incidunt debitis placeat illo qui! Rerum
+            distinctio iusto voluptate molestias voluptatibus deleniti maxime
+            quos dolore, corporis eos doloremque saepe.
+          </p>
+        </div>
+        <div className="space-y-4 border bg-gradient-to-tl from-sky-300 to-sky-100 border-sky-200 rounded-xl">
+          <Image
+            src="/images/chalkavatar.webp"
+            alt="staff"
+            width={300}
+            height={400}
+            className="rounded-full p-2 mx-auto"
+          />
+          <p className="text-center bg-sky-400 font-bold">Dr. Something</p>
+          <p className="text-sm p-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+            blanditiis, eveniet incidunt debitis placeat illo qui! Rerum
+            distinctio iusto voluptate molestias voluptatibus deleniti maxime
+            quos dolore, corporis eos doloremque saepe.
+          </p>
+        </div>
+        <Image
+          src="/images/chalkavatar.webp"
+          alt="staff"
+          width={300}
+          height={400}
+          className="rounded-full"
+        />
       </div>
     </section>
   );
