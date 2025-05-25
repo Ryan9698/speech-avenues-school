@@ -18,6 +18,14 @@ const navLinks = [
     name: 'Staff',
     href: '/staff',
   },
+  {
+    name: 'FAQs',
+    href: '/faqs',
+  },
+  {
+    name: 'Resources',
+    href: '/resources',
+  },
 ];
 export default function Navbar() {
   return (
