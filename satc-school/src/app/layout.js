@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable} ${dmSans.variable} ${nunito.variable} font-quicksand antialiased flex flex-col min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable} ${dmSans.variable} ${nunito.variable} font-quicksand antialiased flex flex-col min-h-screen bg-[#FAFAF9]`}
       >
         <Navbar />
         <main className="flex-grow">{children}</main>

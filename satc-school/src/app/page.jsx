@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Mission } from '@/components';
+
 export default function Home() {
   return (
     <div className="space-y-6">

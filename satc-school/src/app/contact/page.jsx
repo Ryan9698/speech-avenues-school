@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import { ContactMotion } from '@/components/General';
 
 export default function ContactPage() {
   return (
-    <section className="max-w-3xl mx-auto px-6 py-12 text-gray-800">
-      <h1 className="text-4xl font-bold text-center text-green-700 mb-8">
+    <ContactMotion className="max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto px-6 py-12 text-gray-800">
+      <h1 className="text-4xl font-bold font-nunito text-center text-green-700 mb-8">
         Contact Us
       </h1>
 
@@ -16,7 +17,9 @@ export default function ContactPage() {
         </p>
 
         <div>
-          <h2 className="text-2xl font-semibold text-green-800 mb-2">Phone</h2>
+          <h2 className="text-2xl font-semibold font-nunito text-green-800 mb-2">
+            Phone
+          </h2>
           <p>
             <Link
               href="tel:3213382419"
@@ -25,11 +28,13 @@ export default function ContactPage() {
               (321) 338-2419
             </Link>
           </p>
-          <p className="text-sm text-gray-600">FAX: (321) 806-2713</p>
+          <p className="text-sm  text-gray-600">FAX: (321) 806-2713</p>
         </div>
 
         <div>
-          <h2 className="text-2xl font-semibold text-green-800 mb-2">Email</h2>
+          <h2 className="text-2xl font-semibold font-nunito text-green-800 mb-2">
+            Email
+          </h2>
           <p>
             <Link
               href="mailto:admin@speechavenues.com"
@@ -41,7 +46,7 @@ export default function ContactPage() {
         </div>
 
         <div>
-          <h2 className="text-2xl font-semibold text-green-800 mb-2">
+          <h2 className="text-2xl font-semibold font-nunito text-green-800 mb-2">
             Visit Us
           </h2>
           <p>
@@ -56,17 +61,17 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div>
-          <h2 className="text-2xl font-semibold text-green-800 mb-2">
+        <div className="">
+          <h2 className="text-2xl font-semibold font-nunito text-green-800 mb-2">
             Office Hours
           </h2>
-          <p>
+          <p className="text-gray-700 text-lg">
             Monday – Friday: <strong>8:15 AM – 3:15 PM</strong>
           </p>
         </div>
 
         <div>
-          <h2 className="text-2xl font-semibold text-green-800 mb-2">
+          <h2 className="text-2xl font-semibold font-nunito text-green-800 mb-2">
             Follow Us
           </h2>
           <div className="flex gap-4 items-center text-2xl">
@@ -91,6 +96,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-    </section>
+    </ContactMotion>
   );
 }

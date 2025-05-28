@@ -89,15 +89,6 @@ export default function Contact() {
           </li>
         </ul>
       </div>
-
-      <div className="bg-green-50 border-l-4 border-green-400 p-6 rounded-md shadow-sm">
-        <h2 className="text-2xl font-semibold text-green-800 mb-2">
-          School Hours
-        </h2>
-        <p className="text-gray-700 text-lg">
-          Monday – Friday: <strong>8:15 AM – 3:15 PM</strong>
-        </p>
-      </div>
     </section>
   );
 }

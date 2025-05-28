@@ -15,10 +15,10 @@ export default function FAQDetailPage({ params }) {
   if (!faq) return notFound();
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div className="max-w-xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
       {/* Main FAQ answer */}
       <div className="md:col-span-3">
-        <h1 className="text-2xl font-bold text-green-800 mb-4">
+        <h1 className="text-2xl font-bold font-nunito text-green-800 mb-4">
           {faq.question}
         </h1>
         <p className="text-gray-700 whitespace-pre-line mb-6">{faq.answer}</p>
@@ -29,7 +29,7 @@ export default function FAQDetailPage({ params }) {
 
       {/* Sidebar: all FAQ links */}
       <aside className="md:col-span-1 border-l pl-4">
-        <h2 className="text-lg font-semibold mb-3 text-green-700">
+        <h2 className="text-lg font-semibold font-nunito mb-3 text-green-700">
           All Questions
         </h2>
         <nav aria-label="FAQ Sidebar">
@@ -38,7 +38,7 @@ export default function FAQDetailPage({ params }) {
               <li key={item.slug}>
                 <Link
                   href={`/faqs/${item.slug}`}
-                  className={`text-sm block hover:underline ${
+                  className={`text-sm block hover:underline font-nunito ${
                     item.slug === params.slug
                       ? 'text-green-800 font-bold'
                       : 'text-gray-700'

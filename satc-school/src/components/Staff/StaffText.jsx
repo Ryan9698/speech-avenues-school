@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function StaffText() {
   return (
     <section className="max-w-4xl mx-auto px-4 py-12 text-gray-800">
-      <h2 className="text-3xl font-bold text-green-700 text-center mb-6">
+      <h2 className="text-3xl font-bold text-green-700 text-center mb-6 font-nunito">
         Meet Our Team
       </h2>
       <div className="space-y-5 leading-relaxed">
@@ -88,13 +88,52 @@ export default function StaffText() {
             quos dolore, corporis eos doloremque saepe.
           </p>
         </div>
-        <Image
-          src="/images/chalkavatar.webp"
-          alt="staff"
-          width={300}
-          height={400}
-          className="rounded-full"
-        />
+        <div className="flex flex-col md:col-span-3 md:flex-row gap-4 bg-sky-100 p-4 rounded-xl shadow-lg hover:-translate-1">
+          <Image
+            src="/images/chalkavatar.webp"
+            alt="staff"
+            width={200}
+            height={200}
+            className="rounded-full mx-auto md:mx-0"
+          />
+          <div className="flex flex-col justify-center w-full">
+            <h3 className="text-xl font-bold text-green-800 font-nunito">
+              Dr. Something
+            </h3>
+            <h4 className="text-lg font-semibold text-gray-800 font-nunito">
+              Therapist
+            </h4>
+            <p className="text-sm text-gray-700 mt-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+              voluptas aspernatur, rem deleniti, amet nostrum, maxime fugit sed
+              delectus molestiae soluta. Maxime animi quibusdam ratione numquam
+              quaerat odio sint laborum.
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col md:col-span-3 md:flex-row gap-4 p-4 rounded-xl hover:-translate-1">
+          <Image
+            src="/images/chalkavatar.webp"
+            alt="staff"
+            width={150}
+            height={150}
+            className="rounded-full mx-auto md:mx-0"
+          />
+          <div className="flex flex-col justify-center w-full">
+            <h3 className="text-xl font-bold text-green-800 font-nunito">
+              Dr. Something Else
+            </h3>
+            <h4 className="text-lg font-semibold text-gray-800 font-nunito">
+              Therapist
+            </h4>
+            <p className="text-sm text-gray-700 mt-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+              voluptas aspernatur, rem deleniti, amet nostrum, maxime fugit sed
+              delectus molestiae soluta. Maxime animi quibusdam ratione numquam
+              quaerat odio sint laborum.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
