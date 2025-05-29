@@ -183,13 +183,22 @@ export default function Mission() {
         </div>
       </section>
 
-      <section className="text-center py-12">
-        <Link href="/contact">
-          <p className="font-nunito text-pink-600 hover:text-indigo-600 text-2xl">
-            We'd love to meet you,{' '}
-            <span className="animate-bounce underline">contact us</span> today!
+      <section className="py-16 px-4 bg-gradient-to-br from-pink-100 via-yellow-100 to-blue-100 text-gray-800">
+        <div className="max-w-3xl mx-auto text-center rounded-xl p-8 shadow-md bg-white/80 backdrop-blur-md border border-pink-200">
+          <h3 className="text-3xl md:text-4xl font-bold font-quicksand text-pink-600 mb-4">
+            Ready to take the next step?
+          </h3>
+          <p className="text-lg md:text-xl mb-6">
+            Whether you're exploring options or ready to schedule a visit, we're
+            here to support you.
           </p>
-        </Link>
+          <Link
+            href="/contact"
+            className="inline-block mt-4 bg-pink-500 hover:bg-indigo-500 transition-colors text-white font-semibold text-lg px-6 py-3 rounded-full shadow-md"
+          >
+            📞 Contact Us Today
+          </Link>
+        </div>
       </section>
     </>
   );

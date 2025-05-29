@@ -1,55 +1,52 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import MobileMenu from './MobileMenu';
 
 const navLinks = [
-  {
-    name: 'Home',
-    href: '/',
-  },
-  {
-    name: 'About',
-    href: '/about',
-  },
-  {
-    name: 'Contact',
-    href: '/contact',
-  },
-  {
-    name: 'Staff',
-    href: '/staff',
-  },
-  {
-    name: 'FAQs',
-    href: '/faqs',
-  },
-  {
-    name: 'Resources',
-    href: '/resources',
-  },
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Staff', href: '/staff' },
+  { name: 'FAQs', href: '/faqs' },
+  { name: 'Resources', href: '/resources' },
 ];
+
 export default function Navbar() {
   return (
-    // Used grid layout for more control over responsiveness
-    <div className="p-2 w-full grid grid-cols-6 h-20">
-      <div className="col-span-2 h-full">
-        <Image
-          src="/images/navlogo2.webp"
-          alt="satclogo"
-          width={100}
-          height={75}
-        />
+    <header className="w-full bg-pink-100 text-gray-800 shadow-sm border-b border-pink-200">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center gap-3">
+          <Image
+            src="/images/navlogo2.webp"
+            alt="SATC Logo"
+            width={60}
+            height={60}
+            className="rounded-md"
+          />
+          <span className="text-xl font-bold font-geist text-pink-600">
+            Speech Avenues
+          </span>
+        </div>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex gap-10 text-base font-medium">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="hover:text-pink-500 transition-colors duration-200"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Mobile */}
+        <div className="md:hidden">
+          <MobileMenu />
+        </div>
       </div>
-      <div className="text-2xl font-bold text-gray-950 font-geist col-span-4">
-        <ul className="flex gap-20 justify-start items-center h-full">
-          {navLinks.map(({ name, href }, index) => {
-            return (
-              <li key={index}>
-                <Link href={href}>{name}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </div>
+    </header>
   );
 }
