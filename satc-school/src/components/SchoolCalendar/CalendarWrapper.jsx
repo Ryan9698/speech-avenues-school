@@ -64,6 +64,7 @@ export default function CalendarWrapper() {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: direction * -1000, opacity: 0 }}
           transition={{ duration: 0.35 }}
+          className="mb-10"
         >
           <SchoolCalendar month={month} year={year} events={holidays} />
         </motion.div>

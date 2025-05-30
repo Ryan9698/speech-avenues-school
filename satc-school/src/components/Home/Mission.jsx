@@ -48,7 +48,7 @@ export default function Mission() {
   return (
     <>
       <section className="bg-pink-50 py-12 px-4 text-gray-800">
-        <div className="max-w-4xl mx-auto px-4 py-12 text-gray-800">
+        <div className="max-w-4xl mx-auto text-gray-800">
           <h2 className="text-3xl font-bold font-nunito text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-pink-600 text-center mb-6">
             Our Mission & Approach
           </h2>
@@ -60,7 +60,7 @@ export default function Mission() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <span className=" text-indigo-500">
+                <span className=" text-indigo-700">
                   Speech Avenues Therapy Co
                 </span>
               </Link>{' '}
@@ -92,7 +92,7 @@ export default function Mission() {
               before they occur.
             </p>
 
-            <p className="mb-10">
+            <p className="pb-10">
               At SATC-CCA, we stand firm in our belief that every child deserves
               respect, kindness, support, and the opportunity to thrive in a
               safe, welcoming community.
@@ -100,7 +100,7 @@ export default function Mission() {
 
             <div className="flex flex-col md:flex-row bg-white/80 backdrop-blur-sm border border-pink-200 rounded-xl p-6 shadow-md">
               <div className="flex flex-col items-center flex-1">
-                <h3 className="flex text-xl font-semibold mt-6 mb-4 text-pink-600 font-quicksand">
+                <h3 className="flex text-xl font-semibold mt-6 pb-4 text-pink-600 font-quicksand">
                   <MessageCircle className="mr-2 w-5 h-5" />
                   PBS has three core principles:
                 </h3>
