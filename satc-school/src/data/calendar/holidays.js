@@ -3,6 +3,8 @@ export const holidays = [
   { title: 'Martin Luther King Jr. Day', date: '2025-01-20', type: 'holiday' },
   { title: 'Presidents’ Day', date: '2025-02-17', type: 'holiday' },
   { title: 'Memorial Day', date: '2025-05-26', type: 'holiday' },
+  { title: 'Staff Meeting', date: '2025-05-12', type: 'meeting' },
+  { title: 'School Event', date: '2025-05-03', type: 'school' },
   { title: 'Independence Day', date: '2025-07-04', type: 'holiday' },
   { title: 'Labor Day', date: '2025-09-01', type: 'holiday' },
   { title: 'Veterans Day', date: '2025-11-11', type: 'holiday' },

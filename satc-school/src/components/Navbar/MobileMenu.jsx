@@ -6,10 +6,11 @@ import { Menu, X } from 'lucide-react';
 
 const menuLinks = [
   { name: 'Home', href: '/', icon: '🏠' },
-  { name: 'About', href: '/about', icon: '👋' },
   { name: 'Staff', href: '/staff', icon: '🧑‍🏫' },
   { name: 'Contact', href: '/contact', icon: '📞' },
+  { name: 'Resources', href: '/resources', icon: '📚' },
   { name: 'FAQs', href: '/faqs', icon: '❓' },
+  { name: 'Calendar', href: '/calendar', icon: '📅' },
 ];
 
 const linkVariants = {

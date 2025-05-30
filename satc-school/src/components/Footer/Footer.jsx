@@ -3,15 +3,16 @@ import { Mail, Phone } from 'lucide-react';
 
 const footerLinks = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
   { name: 'Staff', href: '/staff' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Resources', href: '/resources' },
   { name: 'FAQs', href: '/faqs' },
+  { name: 'Calendar', href: '/calendar' },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-pink-100 text-gray-700 mt-16 border-t border-pink-200">
+    <footer className="bg-pink-100 text-gray-700 border-t border-pink-200">
       <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-sm">
         {/* Logo + tagline */}
         <div>
@@ -45,7 +46,10 @@ export default function Footer() {
           <h3 className="font-semibold text-pink-400 mb-3">Contact</h3>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
-              <Phone size={16} /> (321) 123-4567
+              <Phone size={16} />{' '}
+              <Link href="tel:3213382419" className="hover:underline">
+                (321) 338-2419
+              </Link>
             </li>
             <li className="flex items-center gap-2">
               <Mail size={16} />{' '}

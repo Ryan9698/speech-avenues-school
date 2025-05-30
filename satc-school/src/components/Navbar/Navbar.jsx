@@ -4,11 +4,11 @@ import MobileMenu from './MobileMenu';
 
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
   { name: 'Staff', href: '/staff' },
-  { name: 'FAQs', href: '/faqs' },
+  { name: 'Contact', href: '/contact' },
   { name: 'Resources', href: '/resources' },
+  { name: 'FAQs', href: '/faqs' },
+  { name: 'Calendar', href: '/calendar' },
 ];
 
 export default function Navbar() {

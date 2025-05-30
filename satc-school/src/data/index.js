@@ -1,2 +1,2 @@
-export { default as getWhatSetsUsApart } from './whatSetsUsApart';
+export { getWhatSetsUsApart } from './whatSetsUsApart';
 export { holidays } from './calendar/holidays';
