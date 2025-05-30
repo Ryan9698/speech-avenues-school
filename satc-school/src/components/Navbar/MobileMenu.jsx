@@ -11,6 +11,7 @@ const menuLinks = [
   { name: 'Resources', href: '/resources', icon: '📚' },
   { name: 'FAQs', href: '/faqs', icon: '❓' },
   { name: 'Calendar', href: '/calendar', icon: '📅' },
+  { name: 'Gallery', href: '/gallery', icon: '📸' },
 ];
 
 const linkVariants = {

@@ -8,6 +8,7 @@ const footerLinks = [
   { name: 'Resources', href: '/resources' },
   { name: 'FAQs', href: '/faqs' },
   { name: 'Calendar', href: '/calendar' },
+  { name: 'Gallery', href: '/gallery' },
 ];
 
 export default function Footer() {
