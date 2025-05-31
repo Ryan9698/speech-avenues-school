@@ -3,6 +3,8 @@ import { getWhatSetsUsApart } from '@/data';
 import { SlideInViewport, PencilAnimation } from '@/components/General';
 import { MessageCircle } from 'lucide-react';
 import React from 'react';
+import Image from 'next/image';
+import { PolaroidFrame } from '@/components/General/PolaroidGallery';
 
 export default function Mission() {
   // Object for animated info card map
@@ -70,20 +72,40 @@ export default function Mission() {
               autism and other developmental delays.
             </p>
 
-            <p>
-              Our approach combines evidence-based educational strategies, a
-              well-rounded curriculum, and integrated speech and occupational
-              therapy. Our therapists create individualized learning experiences
-              tailored to each child's unique strengths and needs.
-            </p>
-
-            <p>
-              We believe that all forms of communication count! Communication is
-              the foundation of social connection, community, and independence.
-              Through structured learning, sensory-friendly classrooms, and
-              supportive interventions, we empower our students to thrive
-              academically, socially, and emotionally.
-            </p>
+            {/* <PolaroidFrame
+              src="/images/IMG_0420.jpeg"
+              caption="SATC-CCA"
+              width="500"
+              height="500"
+            /> */}
+            <div className="flex flex-col md:flex-row w-full">
+              <div className="flex flex-col md:w-1/2 space-y-4">
+                <p className="">
+                  Our approach combines evidence-based educational strategies, a
+                  well-rounded curriculum, and integrated speech and
+                  occupational therapy. Our therapists create individualized
+                  learning experiences tailored to each child's unique strengths
+                  and needs.
+                </p>
+                <p>
+                  We believe that all forms of communication count!
+                  Communication is the foundation of social connection,
+                  community, and independence. Through structured learning,
+                  sensory-friendly classrooms, and supportive interventions, we
+                  empower our students to thrive academically, socially, and
+                  emotionally.
+                </p>
+              </div>
+              <div className="md:w-1/2 flex justify-center">
+                <Image
+                  src="/images/IMG_0420.jpeg"
+                  alt="SATC-CCA"
+                  width={300}
+                  height={250}
+                  className="object-fill rounded-xl border border-pink-200"
+                />
+              </div>
+            </div>
 
             <p>
               <strong>Positive Behavioral Support (PBS) </strong> is the system
@@ -98,13 +120,13 @@ export default function Mission() {
               safe, welcoming community.
             </p>
 
-            <div className="flex flex-col md:flex-row bg-white/80 backdrop-blur-sm border border-pink-200 rounded-xl p-6 shadow-md">
-              <div className="flex flex-col items-center flex-1">
-                <h3 className="flex text-xl font-semibold mt-6 pb-4 text-pink-600 font-quicksand">
+            <div className="flex flex-col md:flex-row bg-white/80 backdrop-blur-sm border border-pink-200 rounded-xl shadow-md">
+              <div className="flex flex-col items-center p-4">
+                <h3 className="flex text-xl font-semibold mt-4 pb-4 text-pink-600 font-quicksand">
                   <MessageCircle className="mr-2 w-5 h-5" />
                   PBS has three core principles:
                 </h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                <ul className="list-disc pl-6 space-y-6 text-gray-700">
                   <li>
                     Focuses on instructional strategies rather than negative
                     consequences (unlike ABA).
@@ -116,7 +138,15 @@ export default function Mission() {
                   </li>
                 </ul>
               </div>
-              <div className=" bg-pink-100 rounded-lg h-64 w-64 m-4 shadow-md" />
+              <div className="flex-1 flex justify-center items-center ">
+                <Image
+                  src="/images/IMG_0419.jpeg"
+                  alt="SATC-CCA"
+                  width={200}
+                  height={200}
+                  className="object-cover rounded-xl border m-4 border-pink-200"
+                />
+              </div>
             </div>
           </div>
         </div>

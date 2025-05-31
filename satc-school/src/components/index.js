@@ -6,3 +6,5 @@ export { PencilAnimation } from './General';
 export { SchoolCalendar } from './SchoolCalendar';
 export { CalendarWrapper } from './SchoolCalendar';
 export { PolaroidGallery } from './General';
+export { PolaroidFrame } from './General';
+export { PolaroidCard } from './General';
