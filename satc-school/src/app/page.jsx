@@ -6,9 +6,9 @@ export default function Home() {
     <div className="space-y-6">
       <div className="relative flex flex-col justify-center items-center md:flex-row bg-sky-100 w-full h-auto">
         <div className="w-full md:w-1/2">
-          <p className="my-10 font-quicksand text-3xl font-bold text-gray-700 font-geist px-10 text-center">
+          <h1 className="my-10 font-quicksand text-3xl font-bold text-gray-700 font-geist px-10 text-center">
             Speech Avenues Therapy Co Communication Cultivation Academy
-          </p>
+          </h1>
         </div>
         <div className="w-full md:w-1/2">
           <Image

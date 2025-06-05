@@ -1,19 +1,38 @@
 import { AccentText } from '@/components/General';
+import { FramedImage } from '@/components/General';
 
 export function getWhatSetsUsApart(color) {
   return [
     {
       title: 'Comprehensive Curriculum',
       content: (
-        <>
-          Our curriculum includes{' '}
-          <AccentText colorClass={color.strong}>
-            math, writing/vocab, science, reading, social studies, art, and
-            vocational training
-          </AccentText>
-          , ensuring a well-rounded educational experience that caters to
-          academic growth and functional life skills.
-        </>
+        <div aria-labelledby="creative-approaches">
+          <div className="flex flex-col md:flex-row">
+            <p className="w-full md:w-[80%]">
+              {' '}
+              Our curriculum includes{' '}
+              <AccentText colorClass={color.strong}>
+                math, writing/vocab, science, reading, social studies, art, and
+                vocational training
+              </AccentText>
+              , ensuring a well-rounded educational experience that caters to
+              academic growth and functional life skills.
+            </p>
+            <FramedImage
+              src="/images/IMG_0419.jpeg"
+              alt="Therapist working with student"
+              caption="Therapy in action"
+              className="w-[250px] md:w-[180px] lg:w-[200px]"
+            />
+          </div>
+        </div>
+      ),
+      image: (
+        <FramedImage
+          src="/images/IMG_0419.jpeg"
+          alt="Therapist working with student"
+          caption="Therapy in action"
+        />
       ),
     },
     {
@@ -67,10 +86,59 @@ export function getWhatSetsUsApart(color) {
         </>
       ),
     },
+    // {
+    //   title: 'Sensory-Friendly Classroom',
+    //   content: (
+    //     <>
+    //       Our Sensory-Friendly Classroom is thoughtfully designed to create a{' '}
+    //       <AccentText colorClass={color.strong}>
+    //         welcoming and supportive learning environment
+    //       </AccentText>{' '}
+    //       for all students, especially those with sensory sensitivities.
+    //       <br />
+    //       <br />
+    //       In this classroom, we incorporate{' '}
+    //       <AccentText colorClass={color.strong}>
+    //         flexible seating options
+    //       </AccentText>
+    //       , <AccentText colorClass={color.strong}>soft lighting</AccentText>,{' '}
+    //       <AccentText colorClass={color.strong}>
+    //         noise-reducing materials
+    //       </AccentText>
+    //       , and a{' '}
+    //       <AccentText colorClass={color.strong}>
+    //         calm, organized layout
+    //       </AccentText>{' '}
+    //       to help minimize overstimulation and promote focus.
+    //       <br />
+    //       <br />
+    //       Sensory tools and calming strategies are integrated into the daily
+    //       routine, giving students the opportunity to self-regulate in a way
+    //       that works best for them.
+    //       <br />
+    //       <br />
+    //       We believe that when students feel comfortable and supported, they’re
+    //       better able to{' '}
+    //       <AccentText colorClass={color.strong}>
+    //         learn, grow, and reach their full potential
+    //       </AccentText>
+    //       . Our Sensory-Friendly Classroom is just one of the many ways we
+    //       tailor education to meet the diverse needs of our learners.
+    //     </>
+    //   ),
+    // },
     {
       title: 'Sensory-Friendly Classroom',
       content: (
         <>
+          <FramedImage
+            src="/images/classroom.jpg"
+            alt="Sensory-friendly classroom"
+            caption="Calm and organized learning space"
+            size={200}
+          />
+          <br />
+          <br />
           Our Sensory-Friendly Classroom is thoughtfully designed to create a{' '}
           <AccentText colorClass={color.strong}>
             welcoming and supportive learning environment

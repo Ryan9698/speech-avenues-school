@@ -1,51 +1,20 @@
 import Link from 'next/link';
 import { getWhatSetsUsApart } from '@/data';
-import { SlideInViewport, PencilAnimation } from '@/components/General';
+import {
+  SlideInViewport,
+  PencilAnimation,
+  FramedImage,
+} from '@/components/General';
 import { MessageCircle } from 'lucide-react';
 import React from 'react';
 import Image from 'next/image';
 import { PolaroidFrame } from '@/components/General/PolaroidGallery';
+import { colors } from './colors';
 
 export default function Mission() {
   // Object for animated info card map
-  const colors = [
-    {
-      border: 'border-blue-300',
-      pencil: 'text-blue-400',
-      header: 'text-blue-700',
-      strong: 'text-blue-600',
-    },
-    {
-      border: 'border-green-300',
-      pencil: 'text-green-400',
-      header: 'text-green-700',
-      strong: 'text-green-600',
-    },
-    {
-      border: 'border-purple-300',
-      pencil: 'text-purple-400',
-      header: 'text-purple-700',
-      strong: 'text-purple-600',
-    },
-    {
-      border: 'border-pink-300',
-      pencil: 'text-pink-400',
-      header: 'text-pink-700',
-      strong: 'text-pink-600',
-    },
-    {
-      border: 'border-blue-300',
-      pencil: 'text-blue-400',
-      header: 'text-blue-700',
-      strong: 'text-blue-600',
-    },
-    {
-      border: 'border-green-300',
-      pencil: 'text-green-400',
-      header: 'text-green-700',
-      strong: 'text-green-600',
-    },
-  ];
+  // This array exists to counter tailswinds inability to combat Tailwind's class extraction logic
+  // The array is looped through and injects colors for the different elements in the mapped blocks.
 
   return (
     <>
@@ -78,7 +47,7 @@ export default function Mission() {
               width="500"
               height="500"
             /> */}
-            <div className="flex flex-col md:flex-row w-full">
+            {/* <div className="flex flex-col md:flex-row w-full">
               <div className="flex flex-col md:w-1/2 space-y-4">
                 <p className="">
                   Our approach combines evidence-based educational strategies, a
@@ -87,25 +56,56 @@ export default function Mission() {
                   learning experiences tailored to each child's unique strengths
                   and needs.
                 </p>
-                <p>
-                  We believe that all forms of communication count!
-                  Communication is the foundation of social connection,
-                  community, and independence. Through structured learning,
-                  sensory-friendly classrooms, and supportive interventions, we
-                  empower our students to thrive academically, socially, and
-                  emotionally.
-                </p>
               </div>
               <div className="md:w-1/2 flex justify-center">
-                <Image
-                  src="/images/IMG_0420.jpeg"
-                  alt="SATC-CCA"
-                  width={300}
-                  height={250}
-                  className="object-fill rounded-xl border border-pink-200"
-                />
+                <div className="transform rotate-1 shadow-lg bg-indigo-50 p-2 rounded-xl max-w-[250px]">
+                  <Image
+                    src="/images/IMG_0420.jpeg"
+                    alt="SATC-CCA"
+                    width={300}
+                    height={250}
+                    className="object-cover rounded-xl border border-pink-200"
+                  />
+                  <p className="text-center text-xs mt-1 italic text-gray-600">
+                    Focused learning time
+                  </p>
+                </div>
               </div>
+            </div> */}
+
+            {/* <p>
+              We believe that all forms of communication count! Communication is
+              the foundation of social connection, community, and independence.
+              Through structured learning, sensory-friendly classrooms, and
+              supportive interventions, we empower our students to thrive
+              academically, socially, and emotionally.
+            </p> */}
+
+            <p className="mb-6">
+              Our approach combines evidence-based educational strategies, a
+              well-rounded curriculum, and integrated speech and occupational
+              therapy. Our therapists create individualized learning experiences
+              tailored to each child's unique strengths and needs.
+            </p>
+
+            <div className="mx-auto mb-6">
+              <FramedImage
+                src="/images/IMG_0420.jpeg"
+                alt="Focused learning time"
+                width={250}
+                height={187}
+                className="rounded object-cover"
+                caption="Tailored Learning Strategies"
+              />
             </div>
+
+            <p className="text-center max-w-2xl mx-auto mb-10">
+              We believe that all forms of communication count! Communication is
+              the foundation of social connection, community, and independence.
+              Through structured learning, sensory-friendly classrooms, and
+              supportive interventions, we empower our students to thrive
+              academically, socially, and emotionally.
+            </p>
 
             <p>
               <strong>Positive Behavioral Support (PBS) </strong> is the system
@@ -120,9 +120,9 @@ export default function Mission() {
               safe, welcoming community.
             </p>
 
-            <div className="flex flex-col md:flex-row bg-white/80 backdrop-blur-sm border border-pink-200 rounded-xl shadow-md">
-              <div className="flex flex-col items-center p-4">
-                <h3 className="flex text-xl font-semibold mt-4 pb-4 text-pink-600 font-quicksand">
+            <div className="flex flex-col md:flex-row bg-white/80 backdrop-blur-sm border border-pink-200 rounded-xl shadow-md overflow-hidden">
+              <div className="md:w-2/3 p-4">
+                <h3 className="flex text-xl font-semibold mt-4 pb-4 text-pink-600 font-quicksand justify-center">
                   <MessageCircle className="mr-2 w-5 h-5" />
                   PBS has three core principles:
                 </h3>
@@ -138,14 +138,15 @@ export default function Mission() {
                   </li>
                 </ul>
               </div>
-              <div className="flex-1 flex justify-center items-center ">
-                <Image
-                  src="/images/IMG_0419.jpeg"
-                  alt="SATC-CCA"
-                  width={200}
-                  height={200}
-                  className="object-cover rounded-xl border m-4 border-pink-200"
-                />
+              <div className="md:w-1/3 flex justify-center items-center p-4 ">
+                <div className="relative aspect-square w-full max-w-sm my-6 mr-6">
+                  <Image
+                    src="/images/IMG_0419.jpeg"
+                    alt="SATC-CCA"
+                    fill
+                    className="object-cover object-top rounded-xl border border-pink-200 mx-auto "
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -153,9 +154,9 @@ export default function Mission() {
       </section>
 
       <section className="bg-indigo-50 py-10">
-        <h3 className="text-4xl font-bold p-8 text-indigo-700 text-center  font-quicksand">
+        <h2 className="text-4xl font-bold p-8 text-indigo-700 text-center  font-quicksand">
           Why We Stand Out:
-        </h3>
+        </h2>
         <p className="text-center font-bold text-lg text-gray-700 max-w-3xl mx-auto px-4 mb-6 font-nunito">
           At SATC-CCA, we go beyond traditional education by providing a
           therapy-integrated approach that meets each child where they are.
@@ -179,8 +180,10 @@ export default function Mission() {
                         {item.title}
                       </h3>
                     </div>
-                    <div className="mx-8 mt-2 text-gray-700 leading-relaxed">
-                      {item.content}
+                    <div className="flex">
+                      <div className="mx-8 mt-2 text-gray-700 leading-relaxed ">
+                        {item.content}
+                      </div>
                     </div>
                   </div>
                 </SlideInViewport>
@@ -192,9 +195,9 @@ export default function Mission() {
 
       <section className="py-16 px-4 bg-gradient-to-br from-blue-100 via-yellow-100 to-pink-100 text-gray-800">
         <div className="max-w-3xl mx-auto text-center rounded-xl p-8 shadow-md bg-white/80 backdrop-blur-md border border-pink-200">
-          <h3 className="text-3xl md:text-4xl font-bold font-quicksand text-pink-600 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold font-quicksand text-pink-600 mb-4">
             Ready to take the next step?
-          </h3>
+          </h2>
           <p className="text-lg md:text-xl mb-6">
             Whether you're exploring options or ready to schedule a visit, we're
             here to support you.

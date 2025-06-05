@@ -8,3 +8,4 @@ export { CalendarWrapper } from './SchoolCalendar';
 export { PolaroidGallery } from './General';
 export { PolaroidFrame } from './General';
 export { PolaroidCard } from './General';
+export { FramedImage } from './General';
