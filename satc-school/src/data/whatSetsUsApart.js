@@ -1,5 +1,6 @@
 import { AccentText } from '@/components/General';
 import { FramedImage } from '@/components/General';
+import Link from 'next/link';
 
 export function getWhatSetsUsApart() {
   return [
@@ -63,7 +64,7 @@ export function getWhatSetsUsApart() {
               src="/images/IMG_0419.jpeg"
               alt="Child using AAC device"
               caption="AAC Device at Work"
-              className="w-[250px] md:w-[180px] lg:w-[200px] "
+              className=" object-fill w-[200px] md:w-[180px] lg:w-[200px] "
             />
             <p className="w-full md:w-[80%]">
               {' '}
@@ -90,131 +91,161 @@ export function getWhatSetsUsApart() {
     {
       title: 'Sensory-Friendly Classroom',
       getContent: (color) => (
-        <>
-          <FramedImage
-            src="/images/classroom.jpg"
-            alt="Sensory-friendly classroom"
-            caption="Calm and organized learning space"
-            size={200}
-          />
-          <br />
-          <br />
-          Our Sensory-Friendly Classroom is thoughtfully designed to create a{' '}
-          <AccentText colorClass={color.strong}>
-            welcoming and supportive learning environment
-          </AccentText>{' '}
-          for all students, especially those with sensory sensitivities.
-          <br />
-          <br />
-          In this classroom, we incorporate{' '}
-          <AccentText colorClass={color.strong}>
-            flexible seating options
-          </AccentText>
-          , <AccentText colorClass={color.strong}>soft lighting</AccentText>,{' '}
-          <AccentText colorClass={color.strong}>
-            noise-reducing materials
-          </AccentText>
-          , and a{' '}
-          <AccentText colorClass={color.strong}>
-            calm, organized layout
-          </AccentText>{' '}
-          to help minimize overstimulation and promote focus.
-          <br />
-          <br />
-          Sensory tools and calming strategies are integrated into the daily
-          routine, giving students the opportunity to self-regulate in a way
-          that works best for them.
-          <br />
-          <br />
-          We believe that when students feel comfortable and supported, they’re
-          better able to{' '}
-          <AccentText colorClass={color.strong}>
-            learn, grow, and reach their full potential
-          </AccentText>
-          . Our Sensory-Friendly Classroom is just one of the many ways we
-          tailor education to meet the diverse needs of our learners.
-        </>
+        <div className="flex flex-col gap-4">
+          <p>
+            Our Sensory-Friendly Classroom is thoughtfully designed to create a{' '}
+            <AccentText colorClass={color.strong}>
+              welcoming and supportive learning environment
+            </AccentText>{' '}
+            for all students, especially those with sensory sensitivities.
+          </p>
+          <div className="flex flex-col md:flex-row gap-4">
+            <p className="md:w-[70%]">
+              In this classroom, we incorporate{' '}
+              <AccentText colorClass={color.strong}>
+                flexible seating options
+              </AccentText>
+              , <AccentText colorClass={color.strong}>soft lighting</AccentText>
+              ,{' '}
+              <AccentText colorClass={color.strong}>
+                noise-reducing materials
+              </AccentText>
+              , and a{' '}
+              <AccentText colorClass={color.strong}>
+                calm, organized layout
+              </AccentText>{' '}
+              to help minimize overstimulation and promote focus.
+            </p>
+            <FramedImage
+              src="/images/IMG_0420.jpeg"
+              alt="Child using AAC device"
+              caption="A classroom designed with your child's needs in mind"
+              className="w-[250px] md:w-[180px] lg:w-[200px] mx-auto"
+            />
+          </div>
+          <p>
+            Sensory tools and calming strategies are integrated into the daily
+            routine, giving students the opportunity to self-regulate in a way
+            that works best for them.
+          </p>
+          <div className="flex flex-col md:flex-row gap-4">
+            <FramedImage
+              src="/images/IMG_0420.jpeg"
+              alt="Child using AAC device"
+              caption="A classroom designed with your child's needs in mind"
+              className=" w-[250px] md:w-[180px] lg:w-[200px] mx-auto"
+            />
+            <p className="md:w-[70%]">
+              We believe that when students feel comfortable and supported,
+              they’re better able to{' '}
+              <AccentText colorClass={color.strong}>
+                learn, grow, and reach their full potential
+              </AccentText>
+              . Our Sensory-Friendly Classroom is just one of the many ways we
+              tailor education to meet the diverse needs of our learners.
+            </p>
+          </div>
+        </div>
       ),
     },
     {
       title: 'Sensory Gym and Sensory Room',
       getContent: (color) => (
-        <>
-          Our Sensory Gym is an active space equipped with{' '}
-          <AccentText colorClass={color.strong}>
-            swings, climbing structures, balance tools
-          </AccentText>
-          , and other movement-based equipment to help students regulate their
-          energy levels, build motor skills, and improve focus. It’s a fun,
-          engaging environment that encourages{' '}
-          <AccentText colorClass={color.strong}>
-            physical development
-          </AccentText>{' '}
-          in a safe and supportive setting.
-          <br />
-          <br />
-          The Sensory Room offers a{' '}
-          <AccentText colorClass={color.strong}>
-            calming, quiet environment
-          </AccentText>{' '}
-          tailored for relaxation and self-regulation. With{' '}
-          <AccentText colorClass={color.strong}>
-            soothing lights, soft textures, gentle sounds
-          </AccentText>
-          , and sensory tools, this space is ideal for students who may need a
-          break from stimulation or a moment to reset during the day.
-          <br />
-          <br />
-          These spaces are part of our commitment to providing{' '}
-          <AccentText colorClass={color.strong}>
-            inclusive, student-centered education
-          </AccentText>{' '}
-          where every child has the tools they need to thrive—emotionally,
-          physically, and academically.
-        </>
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col md:flex-row gap-4">
+            <p className="md:w-[70%]">
+              Our Sensory Gym is an active space equipped with{' '}
+              <AccentText colorClass={color.strong}>
+                swings, climbing structures, balance tools
+              </AccentText>
+              , and other movement-based equipment to help students regulate
+              their energy levels, build motor skills, and improve focus. It’s a
+              fun, engaging environment that encourages{' '}
+              <AccentText colorClass={color.strong}>
+                physical development
+              </AccentText>{' '}
+              in a safe and supportive setting.
+            </p>
+            <FramedImage
+              src="/images/IMG_0420.jpeg"
+              alt="Child using AAC device"
+              caption="A classroom designed with your child's needs in mind"
+              className=" w-[250px] md:w-[180px] lg:w-[200px] mx-auto"
+            />
+          </div>
+          <p>
+            The Sensory Room offers a{' '}
+            <AccentText colorClass={color.strong}>
+              calming, quiet environment
+            </AccentText>{' '}
+            tailored for relaxation and self-regulation. With{' '}
+            <AccentText colorClass={color.strong}>
+              soothing lights, soft textures, gentle sounds
+            </AccentText>
+            , and sensory tools, this space is ideal for students who may need a
+            break from stimulation or a moment to reset during the day.
+          </p>
+          <p>
+            These spaces are part of our commitment to providing{' '}
+            <AccentText colorClass={color.strong}>
+              inclusive, student-centered education
+            </AccentText>{' '}
+            where every child has the tools they need to thrive—emotionally,
+            physically, and academically.
+          </p>
+        </div>
       ),
     },
     {
       title: 'Family Involvement and Support',
       getContent: (color) => (
-        <>
-          We believe that a{' '}
-          <AccentText colorClass={color.strong}>
-            partnership between school and home
-          </AccentText>{' '}
-          is key to student success. At our school, we actively encourage and
-          support family involvement in every step of a child's educational
-          journey.
-          <br />
-          <br />
-          From{' '}
-          <AccentText colorClass={color.strong}>
-            regular communication and family workshops
-          </AccentText>{' '}
-          to{' '}
-          <AccentText colorClass={color.strong}>
-            volunteer opportunities
-          </AccentText>{' '}
-          and special events, we work hand-in-hand with parents and caregivers
-          to create a{' '}
-          <AccentText colorClass={color.strong}>
-            connected, supportive learning community
-          </AccentText>
-          .
-          <br />
-          <br />
-          We also offer resources and guidance to help families navigate their
-          child’s unique needs—academically, socially, and emotionally.
-          <br />
-          <br />
-          Whether it’s through{' '}
-          <AccentText colorClass={color.strong}>
-            parent-teacher conferences
-          </AccentText>
-          , classroom activities, or school-wide initiatives, we value the vital
-          role families play in helping our students grow, thrive, and feel
-          confident in their abilities.
-        </>
+        <div className="flex flex-col gap-4 leading-8">
+          <p>
+            We believe that a{' '}
+            <AccentText colorClass={color.strong}>
+              partnership between school and home
+            </AccentText>{' '}
+            is key to student success. At our school, we actively encourage and
+            support family involvement in every step of a child's educational
+            journey.
+          </p>
+          <p>
+            From{' '}
+            <AccentText colorClass={color.strong}>
+              regular communication and family workshops
+            </AccentText>{' '}
+            to{' '}
+            <AccentText colorClass={color.strong}>
+              volunteer opportunities
+            </AccentText>{' '}
+            and special events, we work hand-in-hand with parents and caregivers
+            to create a{' '}
+            <AccentText colorClass={color.strong}>
+              connected, supportive learning community
+            </AccentText>
+            .
+          </p>
+          <p>
+            We also offer{' '}
+            <Link
+              href="/resources"
+              className="font-bold text-indigo-400 tracking-wider  underline decoration-indigo-400"
+            >
+              resources{' '}
+            </Link>
+            and guidance to help families navigate their child’s unique
+            needs—academically, socially, and emotionally.
+          </p>
+          <p>
+            Whether it’s through{' '}
+            <AccentText colorClass={color.strong}>
+              parent-teacher conferences
+            </AccentText>
+            , classroom activities, or school-wide initiatives, we value the
+            vital role families play in helping our students grow, thrive, and
+            feel confident in their abilities.
+          </p>
+        </div>
       ),
     },
   ];
