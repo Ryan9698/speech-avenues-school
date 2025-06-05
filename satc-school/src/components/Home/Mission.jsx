@@ -12,9 +12,34 @@ import { PolaroidFrame } from '@/components/General/PolaroidGallery';
 import { colors } from './colors';
 
 export default function Mission() {
-  // Object for animated info card map
-  // This array exists to counter tailswinds inability to combat Tailwind's class extraction logic
-  // The array is looped through and injects colors for the different elements in the mapped blocks.
+  /*
+  Calls the getWhatSetsUsApart function to return a base array of unstyled content blocks.
+
+  Each block includes:
+  - title: a string
+  - getContent: a function that receives a `color` object and returns JSX with color classes applied
+
+  We then map through this unstyled array (`uncoloredItems`) and inject the matching `colors[index]`
+  into both:
+    1. A new `color` key for external use (e.g. for borders, headings, icons)
+    2. The `content` key, by calling `getContent(color)` to generate the JSX with dynamic color classes
+
+  Final structure for each item:
+  {
+    title: string,
+    getContent: (color) => JSX,
+    color: { border, pencil, header, strong },
+    content: JSX
+  }
+*/
+
+  const uncoloredItems = getWhatSetsUsApart();
+
+  const items = uncoloredItems.map((item, index) => ({
+    ...item,
+    color: colors[index],
+    content: item.getContent(colors[index]),
+  }));
 
   return (
     <>
@@ -40,46 +65,6 @@ export default function Mission() {
               environment for nonverbal and minimally verbal children with
               autism and other developmental delays.
             </p>
-
-            {/* <PolaroidFrame
-              src="/images/IMG_0420.jpeg"
-              caption="SATC-CCA"
-              width="500"
-              height="500"
-            /> */}
-            {/* <div className="flex flex-col md:flex-row w-full">
-              <div className="flex flex-col md:w-1/2 space-y-4">
-                <p className="">
-                  Our approach combines evidence-based educational strategies, a
-                  well-rounded curriculum, and integrated speech and
-                  occupational therapy. Our therapists create individualized
-                  learning experiences tailored to each child's unique strengths
-                  and needs.
-                </p>
-              </div>
-              <div className="md:w-1/2 flex justify-center">
-                <div className="transform rotate-1 shadow-lg bg-indigo-50 p-2 rounded-xl max-w-[250px]">
-                  <Image
-                    src="/images/IMG_0420.jpeg"
-                    alt="SATC-CCA"
-                    width={300}
-                    height={250}
-                    className="object-cover rounded-xl border border-pink-200"
-                  />
-                  <p className="text-center text-xs mt-1 italic text-gray-600">
-                    Focused learning time
-                  </p>
-                </div>
-              </div>
-            </div> */}
-
-            {/* <p>
-              We believe that all forms of communication count! Communication is
-              the foundation of social connection, community, and independence.
-              Through structured learning, sensory-friendly classrooms, and
-              supportive interventions, we empower our students to thrive
-              academically, socially, and emotionally.
-            </p> */}
 
             <p className="mb-6">
               Our approach combines evidence-based educational strategies, a
@@ -164,31 +149,32 @@ export default function Mission() {
         </p>
         <div className="max-w-4xl lg:max-w-6xl mx-auto mt-10 px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-            {colors.map((color, index) => {
-              const item = getWhatSetsUsApart(color)[index];
-              return (
-                <SlideInViewport key={item.title} index={index}>
-                  <div
-                    className={`flex flex-col h-full bg-white rounded-xl shadow p-6 border-r-4 
-        ${color.border}`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <PencilAnimation index={index} color={color.pencil} />
-                      <h3
-                        className={`text-2xl font-bold font-quicksand ${color.header}`}
-                      >
-                        {item.title}
-                      </h3>
-                    </div>
-                    <div className="flex">
-                      <div className="mx-8 mt-2 text-gray-700 leading-relaxed ">
-                        {item.content}
-                      </div>
+            {/* DYNAMIC COLOR CONTENT BLOCKS */}
+            {/* Mapping of a combined array with the associated color groups to have a different theme for each block
+            Each map creates a dedicated section block with its own id for accessibility. */}
+            {items.map((item, index) => (
+              <SlideInViewport key={item.title} index={index}>
+                <section
+                  aria-labelledby={`section-${index}`}
+                  className={`flex flex-col h-full bg-white rounded-xl shadow p-6 border-r-4 ${item.color.border}`}
+                >
+                  <div className="flex items-center gap-3">
+                    <PencilAnimation index={index} color={item.color.pencil} />
+                    <h3
+                      id={`section-${index}`}
+                      className={`text-2xl font-bold font-quicksand ${item.color.header}`}
+                    >
+                      {item.title}
+                    </h3>
+                  </div>
+                  <div className="flex">
+                    <div className="mx-8 mt-2 text-gray-700 leading-relaxed ">
+                      {item.content}
                     </div>
                   </div>
-                </SlideInViewport>
-              );
-            })}
+                </section>
+              </SlideInViewport>
+            ))}
           </div>
         </div>
       </section>
