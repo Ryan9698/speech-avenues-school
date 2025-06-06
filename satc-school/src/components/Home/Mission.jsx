@@ -158,17 +158,17 @@ export default function Mission() {
                   aria-labelledby={`section-${index}`}
                   className={`flex flex-col h-full bg-white rounded-xl shadow p-6 border-r-4 ${item.color.border}`}
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-4">
                     <PencilAnimation index={index} color={item.color.pencil} />
                     <h3
                       id={`section-${index}`}
-                      className={`text-2xl font-bold font-quicksand ${item.color.header}`}
+                      className={`text-2xl font-bold font-quicksand mb-4 sm:mb-2 ${item.color.header}`}
                     >
                       {item.title}
                     </h3>
                   </div>
                   <div className="flex flex-1">
-                    <div className="mx-8 mt-2 text-gray-700 leading-relaxed ">
+                    <div className="mx-8 my-2 text-gray-700 leading-relaxed ">
                       {item.content}
                     </div>
                   </div>
