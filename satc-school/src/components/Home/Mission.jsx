@@ -167,7 +167,7 @@ export default function Mission() {
                       {item.title}
                     </h3>
                   </div>
-                  <div className="flex">
+                  <div className="flex flex-1">
                     <div className="mx-8 mt-2 text-gray-700 leading-relaxed ">
                       {item.content}
                     </div>

@@ -18,7 +18,7 @@ export default function FramedImage({
 }) {
   return (
     <div
-      className="bg-white rounded-xl shadow-md border border-pink-200 p-2 mx-auto"
+      className="bg-white rounded-xl shadow-md border border-pink-200 p-2 mx-auto flex-shrink-0 self-center"
       style={{ maxWidth: `${width || size}px` }}
     >
       <Image
@@ -29,7 +29,7 @@ export default function FramedImage({
         height={width || size}
         priority={priority}
         sizes={sizes}
-        className={className}
+        className={`aspect-square object-cover object-top ${className}`}
       />
       {caption && (
         <p
