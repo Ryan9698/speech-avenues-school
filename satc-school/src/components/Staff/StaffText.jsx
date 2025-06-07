@@ -8,7 +8,7 @@ export default function StaffText() {
         <h2 className="text-3xl font-bold text-green-700 text-center mb-6 font-quicksand">
           Meet Our Team
         </h2>
-        <div className="space-y-5 leading-relaxed">
+        <div className="space-y-5 leading-relaxed text-sm">
           <p>
             At SATC-CCA, our team is made up of passionate educators, teacher
             aides, therapists, and directors dedicated to supporting children.
