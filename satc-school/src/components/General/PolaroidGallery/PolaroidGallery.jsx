@@ -20,7 +20,7 @@ export default function PolaroidGallery({ photos = [] }) {
 
   return (
     <>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-8 mb-10">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-8 mb-10 mx-auto">
         {photos.map((photo, index) => (
           <PolaroidCard
             key={photo.id || index}

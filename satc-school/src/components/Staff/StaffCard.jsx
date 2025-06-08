@@ -38,7 +38,7 @@ export default function StaffCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: 'easeOut', delay }}
+      transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.5 }}
       className="flex flex-col items-center text-center"
     >
       <Image
