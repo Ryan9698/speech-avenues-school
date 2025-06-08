@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
+import { colorClasses } from '@/data';
 
 export default function StaffCard({
   name,
@@ -11,35 +12,19 @@ export default function StaffCard({
   imageSrc,
   color = 'pink',
   delay = 0,
+  index = 0,
+  onClick,
 }) {
-  const colorClasses = {
-    pink: {
-      name: 'text-pink-600',
-      ring: 'ring-pink-200',
-    },
-    blue: {
-      name: 'text-blue-600',
-      ring: 'ring-blue-200',
-    },
-    indigo: {
-      name: 'text-indigo-600',
-      ring: 'ring-indigo-200',
-    },
-    neutral: {
-      name: 'text-gray-800',
-      ring: 'ring-gray-200',
-    },
-  };
-
   const selected = colorClasses[color] || colorClasses.neutral;
 
   return (
     <motion.div
+      onClick={onClick}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.5 }}
-      className="flex flex-col items-center text-center"
+      transition={{ duration: 0.6, ease: 'easeOut', delay: index * delay }}
+      className="w-full max-w-lg p-6 rounded-xl text-center flex flex-col items-center h-full"
     >
       <Image
         src={imageSrc}

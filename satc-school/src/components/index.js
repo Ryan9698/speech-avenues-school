@@ -9,3 +9,4 @@ export { PolaroidGallery } from './General';
 export { PolaroidFrame } from './General';
 export { PolaroidCard } from './General';
 export { FramedImage } from './General';
+export { Modal } from './General';

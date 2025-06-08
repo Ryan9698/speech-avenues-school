@@ -6,3 +6,4 @@ export { AccentText } from './AccentText';
 export { PolaroidFrame } from './PolaroidGallery';
 export { PolaroidCard } from './PolaroidGallery';
 export { FramedImage } from './FramedImage';
+export { Modal } from './Modal';
