@@ -196,6 +196,19 @@ export default function Mission() {
           </Link>
         </div>
       </section>
+
+      <section className="bg-indigo-50 py-10 px-4">
+        <div className="max-w-6xl mx-auto">
+          <Image
+            src="/images/staffphoto.webp" // or wherever your final export is
+            alt="The SATC-CCA Team smiling together"
+            width={1600}
+            height={1034} // or your scaled height
+            className="rounded-xl shadow-md w-full max-w-6xl mx-auto object-cover border border-pink-200"
+            priority
+          />
+        </div>
+      </section>
     </>
   );
 }

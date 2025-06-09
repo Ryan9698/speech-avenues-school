@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { staffData } from '@/data';
 import { Modal } from '@/components/General';
 
+// Staff members: Gail, Erica, Bryan, Ashley, Selina
+
 export default function StaffText() {
   const [selectedStaff, setSelectedStaff] = useState(null);
   return (
