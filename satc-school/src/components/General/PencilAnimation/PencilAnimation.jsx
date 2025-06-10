@@ -14,7 +14,7 @@ export default function PencilAnimation({
       transition={{ type: 'spring', stiffness: 200, delay: index * 0.2 }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <FaPencilAlt className={`${color} text-xl rotate-270 ${className}`} />
+      <FaPencilAlt className={`${color} md:text-xl rotate-270 ${className}`} />
     </motion.div>
   );
 }

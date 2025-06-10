@@ -162,13 +162,13 @@ export default function Mission() {
               <SlideInViewport key={item.title} index={index}>
                 <section
                   aria-labelledby={`section-${index}`}
-                  className={`flex flex-col h-full bg-white rounded-xl shadow p-6 border-r-4 ${item.color.border}`}
+                  className={`flex flex-col h-full bg-white rounded-xl shadow py-8 md:p-6 border-r-4 ${item.color.border}`}
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-start justify-center md:justify-start gap-2 mb-4 mt-2 mr-2 md:mr-0">
                     <PencilAnimation index={index} color={item.color.pencil} />
                     <h3
                       id={`section-${index}`}
-                      className={`text-2xl font-bold font-quicksand mb-4 sm:mb-2 ${item.color.header}`}
+                      className={`text-2xl font-bold font-quicksand ${item.color.header}`}
                     >
                       {item.title}
                     </h3>
