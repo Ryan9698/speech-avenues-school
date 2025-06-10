@@ -124,7 +124,7 @@ export default function Mission() {
                 </ul>
               </div>
               <div className="md:w-1/3 flex justify-center items-center p-4 ">
-                <div className="relative aspect-square w-full max-w-sm my-6 mr-6">
+                <div className="relative aspect-square w-full mx-auto max-w-sm my-6 mr-6">
                   <Image
                     src="/images/important/image6.webp"
                     alt="SATC-CCA"
