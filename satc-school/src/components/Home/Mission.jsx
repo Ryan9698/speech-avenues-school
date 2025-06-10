@@ -8,8 +8,8 @@ import {
 import { MessageCircle } from 'lucide-react';
 import React from 'react';
 import Image from 'next/image';
-import { PolaroidFrame } from '@/components/General/PolaroidGallery';
 import { colors } from './colors';
+import CallToAction from './CallToAction';
 
 export default function Mission() {
   /*
@@ -75,12 +75,12 @@ export default function Mission() {
 
             <div className="mx-auto mb-6">
               <FramedImage
-                src="/images/IMG_0420.jpeg"
-                alt="Focused learning time"
+                src="/images/important/board.webp"
+                alt="Our Therapists are certified teachers and create comprehensive learning plans for each child."
                 width={250}
                 height={187}
                 className="rounded object-cover"
-                caption="Tailored Learning Strategies"
+                caption="Our Therapists are certified teachers and create comprehensive learning plans for each child. (Need caption; photo can be changed to whatever is preferred)"
               />
             </div>
 
@@ -126,7 +126,7 @@ export default function Mission() {
               <div className="md:w-1/3 flex justify-center items-center p-4 ">
                 <div className="relative aspect-square w-full max-w-sm my-6 mr-6">
                   <Image
-                    src="/images/IMG_0419.jpeg"
+                    src="/images/important/image6.webp"
                     alt="SATC-CCA"
                     fill
                     className="object-cover object-top rounded-xl border border-pink-200 mx-auto "
@@ -138,15 +138,21 @@ export default function Mission() {
         </div>
       </section>
 
-      <section className="bg-indigo-50 py-10">
-        <h2 className="text-4xl font-bold p-8 text-indigo-700 text-center  font-quicksand">
-          Why We Stand Out:
-        </h2>
-        <p className="text-center font-bold text-lg text-gray-700 max-w-3xl mx-auto px-4 mb-6 font-nunito">
-          At SATC-CCA, we go beyond traditional education by providing a
-          therapy-integrated approach that meets each child where they are.
-          Here's what sets us apart:
-        </p>
+      <section className="bg-indigo-50 py-10 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-indigo-700 font-quicksand mb-4 drop-shadow-sm tracking-tight">
+            <span className="inline-block bg-white/70 backdrop-blur-md px-6 py-2 rounded-full border border-indigo-200 shadow-sm">
+              Why We Stand Out
+            </span>
+          </h2>
+          <p className="text-center font-semibold text-lg text-gray-700 max-w-2xl mx-auto px-4 mb-6 mt-10 font-nunito leading-relaxed">
+            At SATC-CCA, we go beyond traditional education by providing a
+            therapy-integrated approach that meets each child where they are.
+          </p>
+          <p className="text-center font-bold text-3xl text-gray-700 max-w-3xl mx-auto px-4 mb-6 font-nunito leading-relaxed">
+            Here's what sets us apart:
+          </p>
+        </div>
         <div className="max-w-4xl lg:max-w-6xl mx-auto mt-10 px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             {/* DYNAMIC COLOR CONTENT BLOCKS */}
@@ -179,7 +185,10 @@ export default function Mission() {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-gradient-to-br from-blue-100 via-yellow-100 to-pink-100 text-gray-800">
+      {/* CALL TO ACTION */}
+
+      <CallToAction />
+      {/* <section className="py-16 px-4 bg-gradient-to-br from-blue-100 via-yellow-100 to-pink-100 text-gray-800">
         <div className="max-w-3xl mx-auto text-center rounded-xl p-8 shadow-md bg-white/80 backdrop-blur-md border border-pink-200">
           <h2 className="text-3xl md:text-4xl font-bold font-quicksand text-pink-600 mb-4">
             Ready to take the next step?
@@ -200,7 +209,7 @@ export default function Mission() {
       <section className="bg-indigo-50 py-10 px-4">
         <div className="max-w-6xl mx-auto">
           <Image
-            src="/images/staffphoto.webp" // or wherever your final export is
+            src="/images/important/ctabanner.webp" // or wherever your final export is
             alt="The SATC-CCA Team smiling together"
             width={1600}
             height={1034} // or your scaled height
@@ -208,7 +217,7 @@ export default function Mission() {
             priority
           />
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

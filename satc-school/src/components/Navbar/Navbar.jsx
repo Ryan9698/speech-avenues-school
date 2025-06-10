@@ -19,15 +19,12 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <Image
-            src="/images/navlogo2.webp"
+            src="/images/satcschool.webp"
             alt="SATC Logo"
-            width={60}
+            width={120}
             height={60}
             className="rounded-md"
           />
-          <span className="text-xl font-bold font-geist text-pink-600">
-            Speech Avenues
-          </span>
         </div>
 
         {/* Desktop Nav */}
