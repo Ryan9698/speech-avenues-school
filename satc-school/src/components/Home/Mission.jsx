@@ -164,11 +164,19 @@ export default function Mission() {
                   aria-labelledby={`section-${index}`}
                   className={`flex flex-col h-full bg-white rounded-xl shadow py-8 md:p-6 border-r-4 ${item.color.border}`}
                 >
-                  <div className="flex items-start justify-center md:justify-start gap-2 mb-4 mt-2 mr-2 md:mr-0">
-                    <PencilAnimation index={index} color={item.color.pencil} />
+                  <div className="relative flex justify-center md:justify-start mb-4 mt-2">
+                    <PencilAnimation
+                      index={index}
+                      color={item.color.pencil}
+                      className={`absolute left-7 top-1 md:static md:mr-2 ${
+                        item.title === 'Family Involvement and Support'
+                          ? 'left-2'
+                          : ''
+                      }`}
+                    />
                     <h3
                       id={`section-${index}`}
-                      className={`text-2xl font-bold font-quicksand ${item.color.header}`}
+                      className={`text-2xl font-bold font-quicksand text-center md:text-left px-10 md:px-0  ${item.color.header}`}
                     >
                       {item.title}
                     </h3>
