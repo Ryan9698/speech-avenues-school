@@ -123,13 +123,13 @@ export default function Mission() {
                   </li>
                 </ul>
               </div>
-              <div className="md:w-1/3 flex justify-center items-center p-4 ">
-                <div className="relative aspect-square w-full mx-auto max-w-sm my-6 mr-6">
+              <div className="md:w-1/3 flex justify-center md:justify-center items-center p-4">
+                <div className="relative aspect-square w-full max-w-xs sm:max-w-sm my-6 mx-auto md:mx-0">
                   <Image
                     src="/images/important/image6.webp"
                     alt="SATC-CCA"
                     fill
-                    className="object-cover object-top rounded-xl border border-pink-200 mx-auto "
+                    className="object-cover object-top rounded-xl border border-pink-200"
                   />
                 </div>
               </div>
