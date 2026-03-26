@@ -43,7 +43,7 @@ export const staffData = [
         </p>
       </>
     ),
-    imageSrc: '/images/staff/gail.jpeg',
+    imageSrc: '/images/staffimg/Gail.webp',
     color: 'pink',
   },
   {
@@ -80,7 +80,7 @@ export const staffData = [
         </p>
       </>
     ),
-    imageSrc: '/images/staff/marco.jpeg',
+    imageSrc: '/images/staffimg/Erica.webp',
     color: 'blue',
   },
   {
@@ -109,7 +109,7 @@ export const staffData = [
         </p>
       </>
     ),
-    imageSrc: '',
+    imageSrc: '/images/staffimg/Lucille.webp',
     color: 'pink',
   },
   {
@@ -138,7 +138,7 @@ export const staffData = [
         </p>
       </>
     ),
-    imageSrc: '/images/staff/sofia.jpeg',
+    imageSrc: '/images/staffimg/AshleyW.webp',
     color: 'indigo',
   },
   {
