@@ -79,9 +79,8 @@ export default function StaffText() {
             {selectedStaff?.name}
           </h2>
           <p className="text-sm text-gray-500 mb-1">{selectedStaff?.title}</p>
-          <p className="text-gray-700 leading-relaxed">
-            {selectedStaff?.description}
-          </p>
+
+          {selectedStaff?.description()}
         </Modal>
       </section>
     </>
