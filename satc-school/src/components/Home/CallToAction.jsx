@@ -12,7 +12,7 @@ export default function CallToAction() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <section className="py-16 px-4 bg-gradient-to-br from-blue-100 via-yellow-100 to-pink-100 text-gray-800">
-        <div className="max-w-3xl mx-auto text-center rounded-xl p-8 shadow-md bg-white/80 backdrop-blur-md border border-pink-200">
+        <div className="max-w-2xl mx-auto text-center rounded-xl p-8 shadow-md bg-white/80 backdrop-blur-md border border-pink-200">
           <h2 className="text-3xl md:text-4xl font-bold font-quicksand text-pink-600 mb-4">
             Ready to take the next step?
           </h2>
@@ -30,7 +30,7 @@ export default function CallToAction() {
       </section>
 
       <section className="bg-indigo-50 py-10 px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <Image
             src="/images/important/ctabanner.webp"
             alt="The SATC-CCA Team smiling together"

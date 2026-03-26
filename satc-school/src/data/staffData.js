@@ -50,7 +50,8 @@ export const staffData = [
     id: 2,
     name: 'Mrs. Erica Gallinat',
     title: 'M.S. CCC-SLP',
-    shortDescription: '',
+    shortDescription:
+      'Mrs. Erica is a licensed and ASHA-certified Speech-Language Pathologist with over a decade of experience supporting children and families with a wide range of communication needs.',
     description: () => (
       <>
         <p>
@@ -87,7 +88,8 @@ export const staffData = [
     id: 3,
     name: 'Mrs. Lucille Bowles',
     title: 'SLPA',
-    shortDescription: '',
+    shortDescription:
+      'Mrs. Lucille is a licensed Speech-Language Pathologist Assistant with a strong background in education and behavior analysis. She brings a thoughtful, structured, and student-centered approach to every session and thrives in both therapy and school settings.',
     description: () => (
       <>
         <p>
@@ -116,7 +118,8 @@ export const staffData = [
     id: 4,
     name: 'Mrs. Ashley W',
     title: 'Teacher Assistant',
-    shortDescription: '',
+    shortDescription:
+      'Mrs. Ashley W puts her heart and passion into SATC-Communication Cultivation Academy. As both a devoted mother of three, and an inspiring leader, she goes above and beyond each day to ensure every child who walks through our doors feels seen, supported, and celebrated.',
     description: () => (
       <>
         <p>
@@ -145,7 +148,8 @@ export const staffData = [
     id: 5,
     name: 'Mr. Bryan K',
     title: 'Teacher Assistant',
-    shortDescription: '',
+    shortDescription:
+      'Mr. Bryan is the driving force behind the fun, movement, and meaningful connections of SATC - Cultivation Communication Academy. As the creator of our recreational activities, he designs games, challenges, and events with purpose - bringing students together while supporting growth in communication and confidence.',
     description: () => (
       <>
         <p>
@@ -167,14 +171,15 @@ export const staffData = [
         </p>
       </>
     ),
-    imageSrc: '/images/staff/bryan.jpeg',
+    imageSrc: '/images/staffimg/Bryan.webp',
     color: 'blue',
   },
   {
     id: 6,
     name: 'Mrs. Alyssa',
     title: 'Teacher Assistant',
-    shortDescription: '',
+    shortDescription:
+      'Mrs. Alyssa brings the sweetest spirit and most nurturing heart into our classrooms each day. Her kindness shines through in the way connects with our students, always meeting them with patience, warmth, and encouragement.',
     description: () => (
       <>
         <p>
@@ -195,14 +200,15 @@ export const staffData = [
         </p>
       </>
     ),
-    imageSrc: '',
+    imageSrc: '/images/staffimg/AshleyP.webp',
     color: 'pink',
   },
   {
     id: 7,
     name: 'Miss Ashley P',
     title: 'Teacher Assistant',
-    shortDescription: '',
+    shortDescription:
+      'Miss Ashley joins us from New Jersey and brings with her a strong background in the medical field and EMS. Her healthcare experience has shaped her into someone who is calm, compassionate, and incredibly attentive to the needs of others.',
     description: () => (
       <>
         <p>
@@ -226,6 +232,8 @@ export const staffData = [
         </p>
       </>
     ),
+    imageSrc: '/images/staffimg/AshleyP.webp',
+    color: 'blue',
   },
   // Add more staff members here
 ];

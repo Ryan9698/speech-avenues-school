@@ -8,7 +8,7 @@ export default function FAQListPage() {
   return (
     <section className="bg-indigo-50/60 min-h-screen px-4 py-12">
       <div className="max-w-3xl mx-auto">
-        <h1 className="flex items-center text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 mb-8 font-nunito">
+        <h1 className="flex justify-center items-center text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 mb-8 font-nunito">
           <HelpCircle className="w-6 h-6 mr-2 text-pink-500" />
           Frequently Asked Questions
         </h1>

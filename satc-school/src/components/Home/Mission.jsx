@@ -44,7 +44,7 @@ export default function Mission() {
   return (
     <>
       <section className="bg-pink-50 py-12 px-4 text-gray-800">
-        <div className="max-w-4xl mx-auto text-gray-800">
+        <div className="max-w-2xl mx-auto text-gray-800">
           <h2 className="text-3xl font-bold font-nunito text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-pink-600 text-center mb-6">
             Our Mission & Approach
           </h2>
@@ -162,7 +162,7 @@ export default function Mission() {
               <SlideInViewport key={item.title} index={index}>
                 <section
                   aria-labelledby={`section-${index}`}
-                  className={`flex flex-col h-full bg-white rounded-xl shadow py-8 md:p-6 border-r-4 ${item.color.border}`}
+                  className={`flex flex-col h-full max-w-3xl mx-auto bg-white rounded-xl shadow py-8 md:p-6 border-r-4 ${item.color.border}`}
                 >
                   <div className="flex gap-2 mb-4 mt-2 px-4 md:px-0">
                     <PencilAnimation

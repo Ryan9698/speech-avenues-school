@@ -19,7 +19,7 @@ export default function FAQDetailPage({ params }) {
 
   return (
     <section className="bg-indigo-50 px-4 py-12">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Main FAQ answer */}
         <FAQContentMotion faq={faq} />
 
