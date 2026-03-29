@@ -200,7 +200,7 @@ export const staffData = [
         </p>
       </>
     ),
-    imageSrc: '/images/staffimg/AshleyP.webp',
+    imageSrc: '/images/staffimg/Alyssa.webp',
     color: 'pink',
   },
   {
