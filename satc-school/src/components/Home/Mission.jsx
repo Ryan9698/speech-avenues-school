@@ -44,7 +44,7 @@ export default function Mission() {
   return (
     <>
       <section className="bg-pink-50 py-12 px-4 text-gray-800">
-        <div className="max-w-2xl mx-auto text-gray-800">
+        <div className="max-w-7xl mx-auto text-gray-800">
           <h2 className="text-3xl font-bold font-nunito text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-pink-600 text-center mb-6">
             Our Mission & Approach
           </h2>
@@ -105,7 +105,7 @@ export default function Mission() {
               safe, welcoming community.
             </p>
 
-            <div className="flex flex-col md:flex-row bg-white/80 backdrop-blur-sm border border-pink-200 rounded-xl shadow-md overflow-hidden">
+            <div className="flex flex-col md:flex-row bg-white/80 backdrop-blur-sm border border-pink-200 rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto">
               <div className="md:w-2/3 p-4">
                 <h3 className="flex text-xl font-semibold mt-4 pb-4 text-pink-600 font-quicksand justify-center">
                   <MessageCircle className="mr-2 w-5 h-5" />
@@ -129,6 +129,7 @@ export default function Mission() {
                     src="/images/important/image6.webp"
                     alt="SATC-CCA"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover object-top rounded-xl border border-pink-200"
                   />
                 </div>
@@ -153,7 +154,7 @@ export default function Mission() {
             Here's what sets us apart:
           </p>
         </div>
-        <div className="max-w-4xl lg:max-w-6xl mx-auto mt-10 px-4">
+        <div className="max-w-4xl lg:max-w-7xl mx-auto mt-10 px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             {/* DYNAMIC COLOR CONTENT BLOCKS */}
             {/* Mapping of a combined array with the associated color groups to have a different theme for each block
