@@ -40,9 +40,16 @@ export default function SchoolCalendar({
     if (!day) return null;
     const formattedDate = `${targetYear}-${String(targetMonth + 1).padStart(
       2,
-      '0'
+      '0',
     )}-${String(day).padStart(2, '0')}`;
-    return events.find((event) => event.date === formattedDate) || null;
+
+    console.log('CELL DATE', formattedDate);
+
+    const match = events.find((event) => {
+      console.log('EVENT DATE:', event.date);
+      return event.date === formattedDate;
+    });
+    return match || null;
   };
 
   const typeColors = {
@@ -68,19 +75,19 @@ export default function SchoolCalendar({
               event?.type === 'holiday'
                 ? 'bg-indigo-100'
                 : event?.type === 'school'
-                ? 'bg-rose-100'
-                : event?.type === 'meeting'
-                ? 'bg-yellow-100'
-                : 'bg-white';
+                  ? 'bg-rose-100'
+                  : event?.type === 'meeting'
+                    ? 'bg-yellow-100'
+                    : 'bg-white';
 
             const dotClass =
               event?.type === 'holiday'
                 ? 'bg-indigo-500'
                 : event?.type === 'school'
-                ? 'bg-rose-500'
-                : event?.type === 'meeting'
-                ? 'bg-yellow-500'
-                : 'bg-transparent';
+                  ? 'bg-rose-500'
+                  : event?.type === 'meeting'
+                    ? 'bg-yellow-500'
+                    : 'bg-transparent';
 
             return (
               <div
@@ -110,11 +117,9 @@ export default function SchoolCalendar({
           <ul className="space-y-2">
             {events
               .filter((event) => {
-                const date = new Date(event.date);
-                return (
-                  date.getFullYear() === targetYear &&
-                  date.getMonth() === targetMonth
-                );
+                const [year, month] = event.date.split('-').map(Number);
+
+                return year === targetYear && month - 1 === targetMonth;
               })
               .sort((a, b) => new Date(a.date) - new Date(b.date))
               .map((event, i) => {
@@ -122,37 +127,37 @@ export default function SchoolCalendar({
                   event.type === 'holiday'
                     ? 'border-indigo-500'
                     : event.type === 'school'
-                    ? 'border-rose-500'
-                    : event.type === 'meeting'
-                    ? 'border-yellow-500'
-                    : 'border-gray-300';
+                      ? 'border-rose-500'
+                      : event.type === 'meeting'
+                        ? 'border-yellow-500'
+                        : 'border-gray-300';
 
                 const bgColor =
                   event.type === 'holiday'
                     ? 'bg-indigo-50'
                     : event.type === 'school'
-                    ? 'bg-rose-50'
-                    : event.type === 'meeting'
-                    ? 'bg-yellow-50'
-                    : 'bg-white';
+                      ? 'bg-rose-50'
+                      : event.type === 'meeting'
+                        ? 'bg-yellow-50'
+                        : 'bg-white';
 
                 const textColor =
                   event.type === 'holiday'
                     ? 'text-indigo-900'
                     : event.type === 'school'
-                    ? 'text-rose-900'
-                    : event.type === 'meeting'
-                    ? 'text-yellow-900'
-                    : 'text-gray-900';
+                      ? 'text-rose-900'
+                      : event.type === 'meeting'
+                        ? 'text-yellow-900'
+                        : 'text-gray-900';
 
                 const subTextColor =
                   event.type === 'holiday'
                     ? 'text-indigo-700'
                     : event.type === 'school'
-                    ? 'text-rose-700'
-                    : event.type === 'meeting'
-                    ? 'text-yellow-700'
-                    : 'text-gray-700';
+                      ? 'text-rose-700'
+                      : event.type === 'meeting'
+                        ? 'text-yellow-700'
+                        : 'text-gray-700';
 
                 return (
                   <li
