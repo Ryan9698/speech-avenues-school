@@ -10,4 +10,10 @@ export const holidays = [
   // { title: 'Veterans Day', date: '2025-11-11', type: 'holiday' },
   // { title: 'Thanksgiving Day', date: '2025-11-27', type: 'holiday' },
   // { title: 'Christmas Day', date: '2025-12-25', type: 'holiday' },
+  {
+    title: 'Spring Break',
+    startDate: '2026-03-10',
+    endDate: '2026-03-14',
+    type: 'school',
+  },
 ];

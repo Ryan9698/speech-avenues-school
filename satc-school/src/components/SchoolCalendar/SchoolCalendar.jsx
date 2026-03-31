@@ -36,8 +36,66 @@ export default function SchoolCalendar({
     ];
   }, [firstDay, totalDays]);
 
-  const getEventForDay = (day) => {
-    if (!day) return null;
+  const eventsByDate = useMemo(() => {
+    const lookup = {};
+
+    for (const event of events) {
+      if (event.date) {
+        lookup[event.date] ??= [];
+        lookup[event.date].push(event);
+        continue;
+      }
+
+      if (event.startDate && event.endDate) {
+        const current = new Date(`${event.startDate}T00:00:00`);
+        const end = new Date(`${event.endDate}T00:00:00`);
+
+        while (current <= end) {
+          const year = current.getFullYear();
+          const month = String(current.getMonth() + 1).padStart(2, '0');
+          const day = String(current.getDate()).padStart(2, '0');
+          const key = `${year}-${month}-${day}`;
+
+          lookup[key] ??= [];
+          lookup[key].push(event);
+
+          current.setDate(current.getDate() + 1);
+        }
+      }
+    }
+
+    return lookup;
+  }, [events]);
+
+  const visibleEvents = useMemo(() => {
+    const monthStart = new Date(targetYear, targetMonth, 1);
+    const monthEnd = new Date(targetYear, targetMonth + 1, 0);
+
+    return events
+      .filter((event) => {
+        if (event.date) {
+          const eventDate = new Date(`${event.date}T00:00:00`);
+          return eventDate >= monthStart && eventDate <= monthEnd;
+        }
+
+        if (event.startDate && event.endDate) {
+          const start = new Date(`${event.startDate}T00:00:00`);
+          const end = new Date(`${event.endDate}T00:00:00`);
+
+          return start <= monthEnd && end >= monthStart;
+        }
+
+        return false;
+      })
+      .sort((a, b) => {
+        const aDate = new Date(`${a.date || a.startDate}T00:00:00`);
+        const bDate = new Date(`${b.date || b.startDate}T00:00:00`);
+        return aDate - bDate;
+      });
+  }, [events, targetYear, targetMonth]);
+
+  const getEventsForDay = (day) => {
+    if (!day) return [];
     const formattedDate = `${targetYear}-${String(targetMonth + 1).padStart(
       2,
       '0',
@@ -45,11 +103,7 @@ export default function SchoolCalendar({
 
     console.log('CELL DATE', formattedDate);
 
-    const match = events.find((event) => {
-      console.log('EVENT DATE:', event.date);
-      return event.date === formattedDate;
-    });
-    return match || null;
+    return eventsByDate[formattedDate] || [];
   };
 
   const typeColors = {
@@ -70,22 +124,24 @@ export default function SchoolCalendar({
       <div className="flex flex-col md:flex-row">
         <div className="md:w-1/2 grid grid-cols-7 border border-gray-300 rounded overflow-hidden text-center">
           {calendarCells.map((day, i) => {
-            const event = getEventForDay(day);
+            const dayEvents = getEventsForDay(day);
+            const hasEvents = dayEvents.length > 0;
+            const primaryEvent = dayEvents[0];
             const bgClass =
-              event?.type === 'holiday'
+              primaryEvent?.type === 'holiday'
                 ? 'bg-indigo-100'
-                : event?.type === 'school'
+                : primaryEvent?.type === 'school'
                   ? 'bg-rose-100'
-                  : event?.type === 'meeting'
+                  : primaryEvent?.type === 'meeting'
                     ? 'bg-yellow-100'
                     : 'bg-white';
 
             const dotClass =
-              event?.type === 'holiday'
+              primaryEvent?.type === 'holiday'
                 ? 'bg-indigo-500'
-                : event?.type === 'school'
+                : primaryEvent?.type === 'school'
                   ? 'bg-rose-500'
-                  : event?.type === 'meeting'
+                  : primaryEvent?.type === 'meeting'
                     ? 'bg-yellow-500'
                     : 'bg-transparent';
 
@@ -94,10 +150,15 @@ export default function SchoolCalendar({
                 key={i}
                 className={`relative aspect-square border border-gray-200 flex items-start justify-start p-1 text-xs sm:text-sm ${bgClass}`}
               >
+                {/* {hasEvents && (
+                  <span className="absolute bottom-1 right-1 text-[10px] px-1 rounded bg-black text-white">
+                    {dayEvents.length}
+                  </span>
+                )} */}
                 {day && (
                   <>
                     <span>{day}</span>
-                    {event && (
+                    {hasEvents && (
                       <span
                         className={`absolute bottom-1 right-1 w-1.5 h-1.5 rounded-full ${dotClass}`}
                       />
@@ -115,62 +176,57 @@ export default function SchoolCalendar({
             Events in {monthName}
           </h3>
           <ul className="space-y-2">
-            {events
-              .filter((event) => {
-                const [year, month] = event.date.split('-').map(Number);
+            {visibleEvents.map((event, i) => {
+              const borderColor =
+                event.type === 'holiday'
+                  ? 'border-indigo-500'
+                  : event.type === 'school'
+                    ? 'border-rose-500'
+                    : event.type === 'meeting'
+                      ? 'border-yellow-500'
+                      : 'border-gray-300';
 
-                return year === targetYear && month - 1 === targetMonth;
-              })
-              .sort((a, b) => new Date(a.date) - new Date(b.date))
-              .map((event, i) => {
-                const borderColor =
-                  event.type === 'holiday'
-                    ? 'border-indigo-500'
-                    : event.type === 'school'
-                      ? 'border-rose-500'
-                      : event.type === 'meeting'
-                        ? 'border-yellow-500'
-                        : 'border-gray-300';
+              const bgColor =
+                event.type === 'holiday'
+                  ? 'bg-indigo-50'
+                  : event.type === 'school'
+                    ? 'bg-rose-50'
+                    : event.type === 'meeting'
+                      ? 'bg-yellow-50'
+                      : 'bg-white';
 
-                const bgColor =
-                  event.type === 'holiday'
-                    ? 'bg-indigo-50'
-                    : event.type === 'school'
-                      ? 'bg-rose-50'
-                      : event.type === 'meeting'
-                        ? 'bg-yellow-50'
-                        : 'bg-white';
+              const textColor =
+                event.type === 'holiday'
+                  ? 'text-indigo-900'
+                  : event.type === 'school'
+                    ? 'text-rose-900'
+                    : event.type === 'meeting'
+                      ? 'text-yellow-900'
+                      : 'text-gray-900';
 
-                const textColor =
-                  event.type === 'holiday'
-                    ? 'text-indigo-900'
-                    : event.type === 'school'
-                      ? 'text-rose-900'
-                      : event.type === 'meeting'
-                        ? 'text-yellow-900'
-                        : 'text-gray-900';
+              const subTextColor =
+                event.type === 'holiday'
+                  ? 'text-indigo-700'
+                  : event.type === 'school'
+                    ? 'text-rose-700'
+                    : event.type === 'meeting'
+                      ? 'text-yellow-700'
+                      : 'text-gray-700';
 
-                const subTextColor =
-                  event.type === 'holiday'
-                    ? 'text-indigo-700'
-                    : event.type === 'school'
-                      ? 'text-rose-700'
-                      : event.type === 'meeting'
-                        ? 'text-yellow-700'
-                        : 'text-gray-700';
-
-                return (
-                  <li
-                    key={i}
-                    className={`border-l-4 pl-3 rounded py-2 ${borderColor} ${bgColor} ${textColor}`}
-                  >
-                    <div className="text-sm font-medium">{event.title}</div>
-                    <div className={`text-xs ${subTextColor}`}>
-                      {event.date}
-                    </div>
-                  </li>
-                );
-              })}
+              return (
+                <li
+                  key={i}
+                  className={`border-l-4 pl-3 rounded py-2 ${borderColor} ${bgColor} ${textColor}`}
+                >
+                  <div className="text-sm font-medium">{event.title}</div>
+                  <div className={`text-xs ${subTextColor}`}>
+                    {event.date
+                      ? event.date
+                      : `${event.startDate} - ${event.endDate}`}
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
