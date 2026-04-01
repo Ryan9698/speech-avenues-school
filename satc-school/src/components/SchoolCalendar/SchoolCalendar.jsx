@@ -112,6 +112,25 @@ export default function SchoolCalendar({
     meeting: 'yellow',
   };
 
+  const formatSimpleDate = (dateString) => {
+    const date = new Date(`${dateString}T00:00:00`);
+    const month = String(date.getMonth() + 1);
+    const day = String(date.getDate());
+    return `${month}-${day}`;
+  };
+
+  const formatDisplayDate = (event) => {
+    if (event.date) {
+      return formatSimpleDate(event.date);
+    }
+
+    if (event.startDate && event.endDate) {
+      return `${formatSimpleDate(event.startDate)} - ${formatSimpleDate(event.endDate)}`;
+    }
+
+    return '';
+  };
+
   return (
     <div className="max-w-4xl mx-auto p-2">
       <div className="md:w-1/2 grid grid-cols-7 text-center font-medium mb-2">
@@ -220,9 +239,7 @@ export default function SchoolCalendar({
                 >
                   <div className="text-sm font-medium">{event.title}</div>
                   <div className={`text-xs ${subTextColor}`}>
-                    {event.date
-                      ? event.date
-                      : `${event.startDate} - ${event.endDate}`}
+                    {formatDisplayDate(event)}
                   </div>
                 </li>
               );
