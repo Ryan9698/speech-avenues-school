@@ -1,9 +1,18 @@
 import { PolaroidGallery } from '@/components';
 
 const samplePhotos = [
-  { id: '1', src: '/images/chalkavatar.webp', caption: 'Field Day' },
-  { id: '2', src: '/images/navlogo2.webp', caption: 'Art Class' },
-  { id: '3', src: '/images/satcschool.webp', caption: 'Story Time' },
+  {
+    id: '1',
+    publicId: 'Speech Avenues School/Gallery/crafts',
+    caption: 'Crafts',
+    alt: 'Students working on crafts',
+  },
+  {
+    id: '2',
+    publicId: 'Speech Avenues School/Gallery/crafts',
+    caption: 'Crafts',
+    alt: 'Students working on crafts',
+  },
 ];
 export default function Gallery() {
   return (

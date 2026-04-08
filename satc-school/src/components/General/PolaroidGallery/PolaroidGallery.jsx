@@ -4,27 +4,31 @@ import PolaroidCard from './PolaroidCard';
 import PolaroidFrame from './PolaroidFrame';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { getModalUrl } from '@/data/cloudinary';
 
 export default function PolaroidGallery({ photos = [] }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const nextPhoto = () => {
-    setActiveIndex((current) => (current + 1) % photos.length);
+    setActiveIndex((current) =>
+      current === null ? 0 : (current + 1) % photos.length,
+    );
   };
 
   const prevPhoto = () => {
     setActiveIndex((current) =>
-      current === 0 ? photos.length - 1 : current - 1
+      current === null ? 0 : current === 0 ? photos.length - 1 : current - 1,
     );
   };
 
   return (
     <>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-8 mb-10 mx-auto ">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-8 mb-10 mx-auto">
         {photos.map((photo, index) => (
           <PolaroidCard
-            key={photo.id || index}
+            key={photo.id}
             photo={photo}
+            index={index}
             onClick={() => setActiveIndex(index)}
           />
         ))}
@@ -48,12 +52,12 @@ export default function PolaroidGallery({ photos = [] }) {
               className="w-80 h-[26rem] sm:w-96 sm:h-[30rem] p-4 bg-white border border-gray-300 shadow-xl rounded-md relative"
             >
               <PolaroidFrame
-                src={photos[activeIndex].src}
+                src={getModalUrl(photos[activeIndex].publicId)}
+                alt={photos[activeIndex].alt}
                 caption={photos[activeIndex].caption}
                 className="w-full h-full"
               />
 
-              {/* Navigation Buttons */}
               <motion.button
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.95 }}

@@ -1,20 +1,20 @@
 'use client';
-import React, { useEffect, useState, useMemo } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import PolaroidFrame from './PolaroidFrame';
+import { getThumbnailUrl } from '@/data/cloudinary';
 
-export default function PolaroidCard({ photo, onClick }) {
-  const [hasMounted, setHasMounted] = useState(false);
+const transforms = [
+  { rotate: -4, x: -4, y: 2 },
+  { rotate: 3, x: 5, y: -3 },
+  { rotate: -2, x: 2, y: 4 },
+  { rotate: 4, x: -3, y: -2 },
+  { rotate: -1, x: 4, y: 1 },
+];
 
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
+export default function PolaroidCard({ photo, onClick, index }) {
+  const t = transforms[index % transforms.length];
 
-  const rotation = useMemo(() => Math.floor(Math.random() * 9) - 4, []);
-  const offsetX = useMemo(() => Math.floor(Math.random() * 10) - 5, []);
-  const offsetY = useMemo(() => Math.floor(Math.random() * 10) - 5, []);
-
-  if (!hasMounted) return null;
   return (
     <motion.div
       whileHover={{ scale: 1.05, rotate: 0 }}
@@ -22,11 +22,15 @@ export default function PolaroidCard({ photo, onClick }) {
       onClick={onClick}
       className="cursor-pointer hover:z-50"
       style={{
-        rotate: rotation,
-        transform: `translate(${offsetX}px, ${offsetY}px)`,
+        rotate: t.rotate,
+        transform: `translate(${t.x}px, ${t.y}px)`,
       }}
     >
-      <PolaroidFrame src={photo.src} caption={photo.caption} />
+      <PolaroidFrame
+        src={getThumbnailUrl(photo.publicId)}
+        caption={photo.caption}
+        alt={photo.alt || 'Gallery image'}
+      />
     </motion.div>
   );
 }

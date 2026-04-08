@@ -7,34 +7,35 @@ const caveat = Caveat({ subsets: ['latin'], weight: ['400'] });
 
 export default function PolaroidFrame({
   src,
+  alt = 'Gallery image',
   caption,
   className = '',
-  children,
-  width = 200,
-  height = 200,
 }) {
   return (
     <div
       className={`${
         className || 'w-48 h-64'
-      } bg-white p-3 rounded-md border border-gray-300 shadow-md flex flex-col items-center justify-between`}
+      } bg-white p-3 rounded-md border border-gray-300 shadow-md flex flex-col`}
     >
-      <Image
-        src={src}
-        alt={caption || 'Polaroid'}
-        className="w-full h-[70%] object-cover rounded-sm border border-gray-200"
-        width={width}
-        height={height}
-      />
-      {caption && (
+      <div className="relative w-full flex-1 overflow-hidden rounded-sm border border-gray-200">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 45vw, 200px"
+        />
+      </div>
+
+      {caption ? (
         <p
-          className={`${caveat.className} text-xl mt-2 text-gray-700 text-center`}
-          style={{ height: '20%' }}
+          className={`${caveat.className} text-xl mt-2 text-gray-700 text-center min-h-8`}
         >
           {caption}
         </p>
+      ) : (
+        <div className="min-h-8 mt-2" />
       )}
-      {children}
     </div>
   );
 }
