@@ -29,7 +29,7 @@ export default function CallToAction() {
         </div>
       </section>
 
-      <section className="bg-indigo-50 py-10 px-4">
+      <section className="bg-pink-50 py-10 px-4">
         <div className="max-w-4xl mx-auto">
           <Image
             src="/images/important/ctabanner.webp"

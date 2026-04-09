@@ -1,4 +1,5 @@
 import { PolaroidGallery } from '@/components';
+import { cloudPhotos } from '@/data/cloudinary';
 
 const samplePhotos = [
   {
@@ -21,7 +22,7 @@ export default function Gallery() {
       <h1 className="text-2xl font-bold font-nunito text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 text-center mb-4">
         Gallery
       </h1>
-      <PolaroidGallery photos={samplePhotos} />
+      <PolaroidGallery photos={cloudPhotos} />
     </div>
   );
 }

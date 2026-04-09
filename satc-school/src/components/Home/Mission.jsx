@@ -43,7 +43,7 @@ export default function Mission() {
 
   return (
     <>
-      <section className="bg-pink-50 py-12 px-4 text-gray-800">
+      <section className="bg-white py-12 px-4 text-gray-800">
         <div className="max-w-7xl mx-auto text-gray-800">
           <h2 className="text-3xl font-bold font-nunito text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-pink-600 text-center mb-6">
             Our Mission & Approach
@@ -105,7 +105,7 @@ export default function Mission() {
               safe, welcoming community.
             </p>
 
-            <div className="flex flex-col md:flex-row bg-white/80 backdrop-blur-sm border border-pink-200 rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row bg-pink-50 backdrop-blur-sm border border-pink-200 rounded-xl shadow-md overflow-hidden max-w-5xl mx-auto">
               <div className="md:w-2/3 p-4">
                 <h3 className="flex text-xl font-semibold mt-4 pb-4 text-pink-600 font-quicksand justify-center">
                   <MessageCircle className="mr-2 w-5 h-5" />
@@ -142,7 +142,7 @@ export default function Mission() {
       <section className="bg-indigo-50 py-10 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-indigo-700 font-quicksand mb-4 drop-shadow-sm tracking-tight">
-            <span className="inline-block bg-white/70 backdrop-blur-md px-6 py-2 rounded-full border border-indigo-200 shadow-sm">
+            <span className="inline-block bg-white/70 backdrop-blur-md px-10 py-4 rounded-full border border-indigo-200 shadow-sm">
               Why We Stand Out
             </span>
           </h2>
