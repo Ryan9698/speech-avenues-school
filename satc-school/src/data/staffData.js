@@ -112,7 +112,7 @@ export const staffData = [
       </>
     ),
     imageSrc: '/images/staffimg/Lucille.webp',
-    color: 'pink',
+    color: 'indigo',
   },
   {
     id: 4,
@@ -142,7 +142,7 @@ export const staffData = [
       </>
     ),
     imageSrc: '/images/staffimg/AshleyW.webp',
-    color: 'indigo',
+    color: 'pink',
   },
   {
     id: 5,
@@ -172,7 +172,7 @@ export const staffData = [
       </>
     ),
     imageSrc: '/images/staffimg/Bryan.webp',
-    color: 'blue',
+    color: 'pink',
   },
   {
     id: 6,
@@ -201,7 +201,7 @@ export const staffData = [
       </>
     ),
     imageSrc: '/images/staffimg/Alyssa.webp',
-    color: 'pink',
+    color: 'blue',
   },
   {
     id: 7,
@@ -234,6 +234,28 @@ export const staffData = [
     ),
     imageSrc: '/images/staffimg/AshleyP.webp',
     color: 'blue',
+  },
+  {
+    id: 8,
+    name: 'Mrs. Gabby',
+    title: 'Administrative Assistant',
+    shortDescription:
+      'Mrs. Gabby serves as the Administrative Assistant for our therapy company while also pursuing her own clinical journey as an occupational therapy student.',
+    description: () => (
+      <>
+        <p>
+          Mrs. Gabby serves as the Administrative Assistant for our therapy
+          company while also pursuing her own clinical journey as an
+          occupational therapy student. She is here to support our school and
+          help assist families with enrollment questions, scheduling,
+          financials, meeting coordination, and fundraisers. She is always happy
+          to help support both students and families however she can.
+        </p>
+      </>
+    ),
+    imageSrc:
+      'https://res.cloudinary.com/dfchcqbiq/image/upload/v1736006311/Speech%20Avenues/Bio%20Photos/Gabby_gxe2th.webp',
+    color: 'pink',
   },
   // Add more staff members here
 ];

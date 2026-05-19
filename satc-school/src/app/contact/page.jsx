@@ -120,7 +120,7 @@ export default function ContactPage() {
             </h2>
             <div className="flex gap-4 items-center text-2xl">
               <Link
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/speechavenuestherapyco/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -129,7 +129,7 @@ export default function ContactPage() {
                 <FaFacebook className="text-blue-600" />
               </Link>
               <Link
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/speechavenuestherapyco/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"

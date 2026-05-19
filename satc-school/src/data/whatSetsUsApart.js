@@ -12,7 +12,7 @@ export function getWhatSetsUsApart() {
             <FramedImage
               src="/images/important/curriculum.webp"
               alt="Picture of an assignment at the school"
-              caption="Caption 1"
+              caption="Education tailored to the needs of your child"
             />
           </div>
           <p className="order-1 md:order-none">
@@ -36,7 +36,7 @@ export function getWhatSetsUsApart() {
             <FramedImage
               src="/images/important/image7.webp"
               alt="Child with headphones using beads"
-              caption="Caption 2"
+              caption=""
               className=""
             />
           </div>
@@ -60,7 +60,7 @@ export function getWhatSetsUsApart() {
             <FramedImage
               src="/images/important/aac.webp"
               alt="Therapist working with student using an AAC device"
-              caption="AAC devices allow easy communication with nonverbal learners (Caption 3)"
+              caption="AAC devices allow easy communication with nonverbal learners"
             />
           </div>
           <p className="order-1 md:order-none">
@@ -107,7 +107,7 @@ export function getWhatSetsUsApart() {
             <FramedImage
               src="/images/important/classroom2.webp"
               alt="Picture of the SATC classroom"
-              caption="A comfortable and welcoming place to learn (Caption 4)"
+              caption="A comfortable and welcoming place to learn"
             />
           </div>
 
@@ -157,7 +157,7 @@ export function getWhatSetsUsApart() {
             <FramedImage
               src="/images/important/sensoryroom.webp"
               alt="Picture of the Sensory Gym"
-              caption="Our sensory gym gives children a place to play and relax (Caption 5)"
+              caption="Our sensory gym gives children a place to play and relax"
               className=""
             />
           </div>
@@ -205,7 +205,7 @@ export function getWhatSetsUsApart() {
             <FramedImage
               src="/images/important/support.webp"
               alt="Working together hand-in-hand to ensure success"
-              caption="We believe working together is key to student success (Caption 6)"
+              caption="We believe working together is key to student success"
             />
           </div>
           <p className="order-1 md:order-none">

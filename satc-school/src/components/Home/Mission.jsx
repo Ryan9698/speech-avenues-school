@@ -80,7 +80,7 @@ export default function Mission() {
                 width={250}
                 height={187}
                 className="rounded object-cover"
-                caption="Our Therapists are certified teachers and create comprehensive learning plans for each child. (Need caption; photo can be changed to whatever is preferred)"
+                caption="Our Therapists are certified teachers and create comprehensive learning plans for each child."
               />
             </div>
 
