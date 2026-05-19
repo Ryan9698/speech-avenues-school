@@ -18,13 +18,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <Image
-            src="/images/satcschool.webp"
-            alt="SATC Logo"
-            width={120}
-            height={60}
-            className="rounded-md"
-          />
+          <Link
+            href="https://speechavenues.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/satcschool.webp"
+              alt="Visit Speech Avenues main website"
+              width={120}
+              height={60}
+              className="rounded-md"
+            />
+          </Link>
         </div>
 
         {/* Desktop Nav */}
