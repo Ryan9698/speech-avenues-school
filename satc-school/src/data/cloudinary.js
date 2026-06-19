@@ -1,3 +1,5 @@
+import { caption } from 'framer-motion/client';
+
 const CLOUD_NAME = 'dfchcqbiq';
 const BASE = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload`;
 
@@ -115,5 +117,59 @@ export const cloudPhotos = [
       'Speech Avenues School/Gallery/Our_students_and_parents_came_out_to_support_us_during_our_school_fundraiser_fall_festival_zde2w3',
     caption: 'Students and Parents coming to support our school fundraiser!',
     alt: 'Students and Parents coming to support our school fundraiser!',
+  },
+  {
+    id: 17,
+    publicId: 'Speech Avenues School/Zoo Trip 2026/zoo1_ujteii',
+    caption: 'Aquarium Exhibit',
+    alt: 'Students watching the underwater wildlife at the Brevard Zoo',
+  },
+  {
+    id: 18,
+    publicId: 'Speech Avenues School/Zoo Trip 2026/zoo2_qtohlp',
+    caption: 'Feeding the giraffe!',
+    alt: 'Students feeding the giraffes!',
+  },
+  {
+    id: 19,
+    publicId: 'Speech Avenues School/Zoo Trip 2026/zoo3_kkwt1a',
+    caption: 'Handling the birds!',
+    alt: 'Student reaching out to take bird at brevard zoo.',
+  },
+  {
+    id: 20,
+    publicId: 'Speech Avenues School/Zoo Trip 2026/zoo7_rxxtdj',
+    caption: 'Ready to explore!',
+    alt: 'Nonverbal student with unit in hand at brevard zoo.',
+  },
+  {
+    id: 21,
+    publicId: 'Speech Avenues School/Zoo Trip 2026/zoo4_bkngwm',
+    caption: 'Zoo Trip 2026',
+    alt: 'Students with deer at brevard zoo.',
+  },
+  {
+    id: 22,
+    publicId: 'Speech Avenues School/Zoo Trip 2026/zoo9_ufkofp',
+    caption: 'Birds love Mr. Bryan!',
+    alt: 'Mr. Bryan with a slew of birds on him!',
+  },
+  {
+    id: 23,
+    publicId: 'Speech Avenues School/Zoo Trip 2026/zoo5_sgwo3e',
+    caption: 'Zoo Trip 2026',
+    alt: 'Students at the brevard zoo!',
+  },
+  {
+    id: 24,
+    publicId: 'Speech Avenues School/Zoo Trip 2026/zoo6_xq6u9p',
+    caption: 'Zoo Trip 2026',
+    alt: 'Students with deer at brevard zoo.',
+  },
+  {
+    id: 25,
+    publicId: 'Speech Avenues School/Zoo Trip 2026/zoo8_ql5tnb',
+    caption: 'Zoo Trip 2026',
+    alt: 'Students with deer at brevard zoo.',
   },
 ];
